@@ -37,6 +37,9 @@ Comment.init(
     {
         sequelize,
         freezeTableName: true,
-        user
+        userscored: true, 
+        modelName: 'comment'
     }
 );
+
+module.exports = Comment; 
