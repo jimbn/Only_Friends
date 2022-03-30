@@ -1,7 +1,7 @@
 // require to use sequelize
 const {Model, DataTypes} = require('sequelize');
 //required to use sequelize
-const sequlize = require('../config/connection'); 
+const sequelize = require('../config/connection'); 
 // creatae our model
 class Post extends Model{}
 
@@ -52,8 +52,12 @@ Post.init({
             model:'channel',
             key: 'id'
         }      
-    }
-
+    }, 
+    sequelize,
+    timeStamps:false,
+    freezeTableName:true,
+    underscored:true,
+    modelName:'user',
 });
 
 module.exports = Post;
