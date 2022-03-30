@@ -1,0 +1,12 @@
+header {
+    background-color: aqua;
+}
+
+ul {
+    list-style-type: none;
+    border: 2px solid blue;
+}
+
+.commentBox {
+    border: 2px solid lightblue;
+}
