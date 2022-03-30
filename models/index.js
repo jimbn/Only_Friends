@@ -20,6 +20,11 @@ User.hasMany(Comment, {
 });
 
 // associatyions for post model
+User.hasMany(Post, {
+    foreignkey:'user_id'
+});
+
+// associatyions for user model
 Post.hasMany(Comment, {
     foreignKey: 'post_id'
 });
@@ -33,7 +38,11 @@ Post.belongsTo(Channel, {
     foreignKey: 'channel_id'
 });
 
-// TO DO: associatyions for category model
+// category associations
+Category.hasMany(Post,{
+    foreignKey:'category_id'
+});
+
 
 
 
