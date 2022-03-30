@@ -47,5 +47,4 @@ Category.hasMany(Post,{
 
 
 
-
 module.exports = {User, Post, Comment, Channel, Category}; 
