@@ -5,12 +5,11 @@ const Comment = require('./Comment');
 const Channel = require('./Channel');
 const Category =require('./Category');
 
-// associatyions for user model
+// associatyions for comment model
 Comment.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-// associatyions for user model
 Comment.belongsTo(Post, {
     foreignKey: 'post_id'
 });
@@ -20,7 +19,7 @@ User.hasMany(Comment, {
     foreignKey: 'user_id'
 });
 
-// associatyions for user model
+// associatyions for post model
 Post.hasMany(Comment, {
     foreignKey: 'post_id'
 });
