@@ -24,7 +24,7 @@ Post.init({
         // make it show the first few parts from the post
         allowNull: false
     },
-    Post_body: {
+    post_body: {
         type: DataTypes.STRING,
         allowNull: false
     },
