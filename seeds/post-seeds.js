@@ -8,7 +8,7 @@ const postData = [
     post_body: ' a;sldkfjalser ja;lsdfja;woeirjff;laks ;aslldkfjl;asjdfoin ;alskdfjp;kasd jl;akjsdf sj ;lkasjdf;laksjdfopewa ;lkjasdfl kjaweoi ;laskdjfi ;lkajsfpoujeag ;lkajsdf asr',
     category_id: 6, 
     user_id: 1,
-    channel_id: 1
+    // channel_id: 1
 },
 {
     title: 'Hello World 2',
@@ -16,7 +16,7 @@ const postData = [
     post_body: ' a;sldkfjalser ja;lsdfja;woeirjff;laks ;aslldkfjl;asjdfoin ;alskdfjp;kasd jl;akjsdf sj ;lkasjdf;laksjdfopewa ;lkjasdfl kjaweoi ;laskdjfi ;lkajsfpoujeag ;lkajsdf asr',
     category_id: 4, 
     user_id: 1,
-    channel_id: 1
+    // channel_id: 1
 },
 {
     title: 'Hello World 3',
@@ -24,7 +24,7 @@ const postData = [
     post_body: ' a;sldkfjalser ja;lsdfja;woeirjff;laks ;aslldkfjl;asjdfoin ;alskdfjp;kasd jl;akjsdf sj ;lkasjdf;laksjdfopewa ;lkjasdfl kjaweoi ;laskdjfi ;lkajsfpoujeag ;lkajsdf asr',
     category_id: 2, 
     user_id: 0,
-    channel_id: 0
+    // channel_id: 0
 },
 {
     title: 'Hello World 4',
@@ -32,7 +32,7 @@ const postData = [
     post_body: ' a;sldkfjalser ja;lsdfja;woeirjff;laks ;aslldkfjl;asjdfoin ;alskdfjp;kasd jl;akjsdf sj ;lkasjdf;laksjdfopewa ;lkjasdfl kjaweoi ;laskdjfi ;lkajsfpoujeag ;lkajsdf asr',
     category_id: 1, 
     user_id: 0,
-    channel_id: 0
+    // channel_id: 0
 },
 {
     title: 'Hello World 5',
@@ -40,7 +40,7 @@ const postData = [
     post_body: ' a;sldkfjalser ja;lsdfja;woeirjff;laks ;aslldkfjl;asjdfoin ;alskdfjp;kasd jl;akjsdf sj ;lkasjdf;laksjdfopewa ;lkjasdfl kjaweoi ;laskdjfi ;lkajsfpoujeag ;lkajsdf asr',
     category_id: 3, 
     user_id: 1,
-    channel_id: 1
+    // channel_id: 1
 },
 {
     title: 'Hello World 6',
@@ -48,7 +48,7 @@ const postData = [
     post_body: ' a;sldkfjalser ja;lsdfja;woeirjff;laks ;aslldkfjl;asjdfoin ;alskdfjp;kasd jl;akjsdf sj ;lkasjdf;laksjdfopewa ;lkjasdfl kjaweoi ;laskdjfi ;lkajsfpoujeag ;lkajsdf asr',
     category_id: 9, 
     user_id: 3,
-    channel_id: 3
+    // channel_id: 3
 },
 {
     title: 'Hello World 7',
@@ -56,7 +56,7 @@ const postData = [
     post_body: ' a;sldkfjalser ja;lsdfja;woeirjff;laks ;aslldkfjl;asjdfoin ;alskdfjp;kasd jl;akjsdf sj ;lkasjdf;laksjdfopewa ;lkjasdfl kjaweoi ;laskdjfi ;lkajsfpoujeag ;lkajsdf asr',
     category_id: 1, 
     user_id: 1,
-    channel_id: 1
+    // channel_id: 1
 },
 {
     title: 'Hello World 8',
@@ -64,7 +64,7 @@ const postData = [
     post_body: ' a;sldkfjalser ja;lsdfja;woeirjff;laks ;aslldkfjl;asjdfoin ;alskdfjp;kasd jl;akjsdf sj ;lkasjdf;laksjdfopewa ;lkjasdfl kjaweoi ;laskdjfi ;lkajsfpoujeag ;lkajsdf asr',
     category_id: 4, 
     user_id: 2,
-    channel_id: 2
+    // channel_id: 2
 },
 ];
 // function to import seeds into the db upon command 'npm run seed'

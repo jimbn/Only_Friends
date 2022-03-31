@@ -32,7 +32,7 @@ Post.init({
     category_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'ategory',
+            model: 'category',
             key: 'id'
         }
 
@@ -46,13 +46,13 @@ Post.init({
         }
     },
     // this is our foreign key
-    channel_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'channel',
-            key: 'id'
-        }
-    }
+    // channel_id: {
+    //     type: DataTypes.INTEGER,
+    //     references: {
+    //         model: 'channel',
+    //         key: 'id'
+    //     }
+    // }
 },
     {
         sequelize,
