@@ -19,15 +19,14 @@ Category.init(
 
 
 
-        },
-        
-
+        }
+    },
+    {
         sequelize,
         freezeTableName: true,
         underscored: true,
         modelName: 'category'
     }
-
 );
 
 module.exports = Category;
