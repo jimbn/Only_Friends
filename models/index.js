@@ -23,8 +23,11 @@ User.hasMany(Comment, {
 User.hasMany(Post, {
     foreignkey:'user_id'
 });
+User.hasOne(Channel, {
+    foreignKey: 'user_id'
+});
 
-// associatyions for user model
+// associatyions for post model
 Post.hasMany(Comment, {
     foreignKey: 'post_id'
 });
@@ -41,6 +44,19 @@ Post.belongsTo(Channel, {
 // category associations
 Category.hasMany(Post,{
     foreignKey:'category_id'
+});
+
+// channel associations
+Channel.hasMany(Category, {
+    foreignKey: 'channel_id'
+});
+
+Channel.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
+Channel.hasMany(Post, {
+    foreignKey: 'channel_id'
 });
 
 
