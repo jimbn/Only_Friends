@@ -17,8 +17,9 @@
             </div>
             <h1 class="col-6">Only Friends</h1>
             <div class="col-2">
-                <div><a>Log In</a></div>
-                <div><a>Sign Up</a></div>
+                <!-- LogIn and SignUp onClick either populate modal or change page -->
+                <button><a>Log In</a></button>
+                <button><a>Sign Up</a></button>
             </div>
         </div>
     </header>
@@ -29,28 +30,29 @@
              <!-- Left  handside contain PINNED POST and other info regarding channel-->
             <div class="col-4">
                 <!-- Pinned Post -->
+                <!-- Make list scroll. onClick populate on right container -->
                 <div class="">
-                    <ul>
-                        <li><a>Pinned 1</a></li>
-                        <li><a>Pinned 2</a></li>
-                        <li><a>Pinned 3</a></li>
-                        <li><a>Pinned 4</a></li>
-                        <li><a>Pinned 5</a></li>
+                    <ul class="scroll">
+                        <li class="listPadding"><a>Pinned 1</a></li>
+                        <li class="listPadding"><a>Pinned 2</a></li>
+                        <li class="listPadding"><a>Pinned 3</a></li>
+                        <li class="listPadding"><a>Pinned 4</a></li>
+                        <li class="listPadding"><a>Pinned 5</a></li>
                     </ul>
                 </div>
                 <!-- Following Members -->
                 <div class="">
-                    <ul>
-                        <li>Member 1</li>
-                        <li>Member 2</li>
-                        <li>Member 3</li>
-                        <li>Member 4</li>
-                        <li>Member 5</li>
-                        <li>Member 6</li>
-                        <li>Member 7</li>
-                        <li>Member 8</li>
-                        <li>Member 9</li>
-                        <li>Member 10</li>
+                    <ul class ="scroll"> 
+                        <li class="listPadding">Member 1</li>
+                        <li class="listPadding">Member 2</li>
+                        <li class="listPadding">Member 3</li>
+                        <li class="listPadding">Member 4</li>
+                        <li class="listPadding">Member 5</li>
+                        <li class="listPadding">Member 6</li>
+                        <li class="listPadding">Member 7</li>
+                        <li class="listPadding">Member 8</li>
+                        <li class="listPadding">Member 9</li>
+                        <li class="listPadding">Member 10</li>
                     </ul>
                 </div>
             </div>
@@ -61,7 +63,7 @@
                     <h2 class="postHeader">
                         Post Title
                     </h2>
-                    <h4> Written By</h4>
+                    <h4 class="floatRight"> Written By</h4>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae sed quia tempora cum! Consequuntur, quis. Aliquid fugit dolores ex nemo sequi impedit consectetur eligendi nostrum omnis, expedita quibusdam quaerat optio!
                         Repellat voluptatibus tenetur minus aliquam corporis at sapiente ab ut similique quia, non recusandae? Reiciendis, recusandae. Pariatur ad, modi facere, eligendi sint maiores amet quis illo odio, hic repellat earum!
@@ -85,35 +87,38 @@
                 </div>
                 <!-- Comments -->
                 <div>
-                    <<div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                      </div>
-                    <ul>
-                        <li class="commentBox">
+                    <div class="">
+                        <textarea class="form-control" id="" rows="1" placeholder="Comment"></textarea>
+                        <div>
+                            <button>Submit</button>
+                            <button>Cancel</button>
+                        </div>
+                    </div>
+                    <ul class="scrollComment">
+                        <li class="commentDisplay commentPadding">
                             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ullam, eum aliquid consectetur ipsum sapiente voluptatibus dolorem aliquam minus, accusantium mollitia, veritatis repellat quia provident unde commodi. Ut, asperiores nobis!
                             Consectetur officia natus temporibus, omnis, iure quisquam autem impedit aliquam quo molestiae veniam. Repudiandae, incidunt alias! Repudiandae nulla itaque saepe dolore placeat, maxime ea non neque quod ex ipsa asperiores!</div>
-                            <div>Commented By</div>
+                            <div class="floatRight">Commented By</div>
                         </li>
-                        <li class="commentBox">
+                        <li class="commentDisplay commentPadding">
                             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ullam, eum aliquid consectetur ipsum sapiente voluptatibus dolorem aliquam minus, accusantium mollitia, veritatis repellat quia provident unde commodi. Ut, asperiores nobis!
                             Consectetur officia natus temporibus, omnis, iure quisquam autem impedit aliquam quo molestiae veniam. Repudiandae, incidunt alias! Repudiandae nulla itaque saepe dolore placeat, maxime ea non neque quod ex ipsa asperiores!</div>
-                            <div>Commented By</div>
+                            <div class="floatRight">Commented By</div>
                         </li>
-                        <li class="commentBox">
+                        <li class="commentDisplay commentPadding">
                             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ullam, eum aliquid consectetur ipsum sapiente voluptatibus dolorem aliquam minus, accusantium mollitia, veritatis repellat quia provident unde commodi. Ut, asperiores nobis!
                             Consectetur officia natus temporibus, omnis, iure quisquam autem impedit aliquam quo molestiae veniam. Repudiandae, incidunt alias! Repudiandae nulla itaque saepe dolore placeat, maxime ea non neque quod ex ipsa asperiores!</div>
-                            <div>Commented By</div>
+                            <div class="floatRight">Commented By</div>
                         </li>
-                        <li class="commentBox">
+                        <li class="commentDisplay commentPadding">
                             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ullam, eum aliquid consectetur ipsum sapiente voluptatibus dolorem aliquam minus, accusantium mollitia, veritatis repellat quia provident unde commodi. Ut, asperiores nobis!
                             Consectetur officia natus temporibus, omnis, iure quisquam autem impedit aliquam quo molestiae veniam. Repudiandae, incidunt alias! Repudiandae nulla itaque saepe dolore placeat, maxime ea non neque quod ex ipsa asperiores!</div>
-                            <div>Commented By</div>
+                            <div class="floatRight">Commented By</div>
                         </li>
-                        <li class="commentBox">
+                        <li class="commentDisplay commentPadding">
                             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ullam, eum aliquid consectetur ipsum sapiente voluptatibus dolorem aliquam minus, accusantium mollitia, veritatis repellat quia provident unde commodi. Ut, asperiores nobis!
                             Consectetur officia natus temporibus, omnis, iure quisquam autem impedit aliquam quo molestiae veniam. Repudiandae, incidunt alias! Repudiandae nulla itaque saepe dolore placeat, maxime ea non neque quod ex ipsa asperiores!</div>
-                            <div>Commented By</div>
+                            <div class="floatRight">Commented By</div>
                         </li>
                     </ul>
                 </div>
