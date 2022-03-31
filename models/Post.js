@@ -24,7 +24,7 @@ Post.init({
         // make it show the first few parts from the post
         allowNull: false
     },
-    Post_body: {
+    post_body: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -46,13 +46,13 @@ Post.init({
         }
     },
     // this is our foreign key
-    channel_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'channel',
-            key: 'id'
-        }
-    }
+    // channel_id: {
+    //     type: DataTypes.INTEGER,
+    //     references: {
+    //         model: 'channel',
+    //         key: 'id'
+    //     }
+    // }
 },
     {
         sequelize,

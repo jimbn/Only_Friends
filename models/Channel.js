@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('sequelize');
+const sequelize = require('../config/connection');
 
-class Channel extends Model { };
+class Channel extends Model {};
 
 Channel.init(
     {
@@ -19,22 +19,22 @@ Channel.init(
                 key: 'id'
             }
         },
-        post_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false, 
-            references: {
-                model: 'post',
-                key: 'id'
-            }
-        },
-        category_id:{
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references:{
-                model: 'category',
-                key:'id'
-            }
-        }
+        // post_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false, 
+        //     references: {
+        //         model: 'post',
+        //         key: 'id'
+        //     }
+        // },
+        // category_id:{
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     references:{
+        //         model: 'category',
+        //         key:'id'
+        //     }
+        // }
     },
     {
         sequelize,
