@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.scroll {
+    display: block;
+    padding: 5px;
+    margin: 5px;
+    height: 100px;
+    overflow: auto;
+}
+
+.scrollComment{
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    height: 40rem;
+    overflow: auto;
+}
+
+header {
+    background-color: aqua;
+}
+
+ul {
+    list-style-type: none;
+    border: 2px solid blue;
+}
+
+.commentDisplay {
+    border: 2px solid lightblue;
+}
+
+.floatRight {
+    text-align: right;
+}
+
+.listPadding {
+    padding: 3px;
+}
+
+.commentPadding {
+    padding: 10px;
+}
