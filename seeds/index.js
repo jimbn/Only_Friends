@@ -1,6 +1,7 @@
 // importing seed functions from their respective files 
 const seedUsers = require('./user-seeds');
 const seedCategories = require('./category-seeds');
+const seedChannels = require('./channel-seeds');
 // importing sequelize 
 const sequelize = require('sequelize');
 
