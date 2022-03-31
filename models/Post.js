@@ -32,7 +32,7 @@ Post.init({
     category_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'ategory',
+            model: 'category',
             key: 'id'
         }
 
