@@ -1,0 +1,18 @@
+{{!-- plugged in  dummy template for single post url to render post title, post body, and username and a link to comments  --}}
+<article class="post">
+  <div class="title">
+    <p> {{post.title}}</p>
+    <p>
+        {{post.post_body}}
+    </p>
+    
+  </div>
+  <div class="meta">
+    posted by {{post.user.username}} on
+    {{post.created_at}}
+    |
+    <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+  </div>
+</article>
+
+{{!-- front end logic script tage will go below this line  --}}
