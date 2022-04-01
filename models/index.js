@@ -3,7 +3,7 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 const Channel = require('./Channel');
-const Category =require('./Category');
+
 
 // asociations for user model 
 User.hasMany(Comment, {
@@ -23,11 +23,6 @@ User.hasOne(Channel, {
 });
 
 // channel associations
-Channel.hasMany(Category, {
-    foreignKey: 'channel_id',
-    constraints:false
-});
-
 Channel.belongsTo(User, {
     foreignKey: 'user_id',
     constraints:false
@@ -50,15 +45,9 @@ Comment.belongsTo(Post, {
 });
 
 
-
-
 // // associations for post model
 Post.hasMany(Comment, {
     foreignKey: 'post_id',
-    constraints:false
-});
-Post.belongsTo(Category, {
-    foreignKey: 'category_id',
     constraints:false
 });
 Post.belongsTo(User, {
@@ -70,15 +59,7 @@ Post.belongsTo(Channel, {
     constraints:false
 });
 
-// // category associations
-Category.hasMany(Post,{
-    foreignKey:'category_id',
-    constraints:false
-});
 
 
-
-
-
-module.exports = {User, Post, Comment, Channel,Category};
-//  module.exports = {User, Post, Comment, Channel, Category}; 
+module.exports = {User, Post, Comment, Channel};
+//  module.exports = {User, Post, Comment, Channel}; 
