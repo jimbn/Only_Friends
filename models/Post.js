@@ -6,7 +6,7 @@ const sequelize = require('../config/connection');
 class Post extends Model { }
 
 // Initiates models and holds properties
-// figure out how to male the model have media in the prop
+// figure out how to make the model have media in the prop. consider using urls. Save the urls as strings
 Post.init({
     id: {
         type: DataTypes.INTEGER,
@@ -22,7 +22,9 @@ Post.init({
     preview: {
         type: DataTypes.STRING,
         // make it show the first few parts from the post
-        allowNull: false
+        allowNull: false,
+    //   len is for the length of characters min 2 and a max of 50
+        len: [2,50]
     },
     post_body: {
         type: DataTypes.STRING,
