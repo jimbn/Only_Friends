@@ -11,7 +11,6 @@ User.init(
             autoIncrement:true,
             primaryKey:true,
             allowNull:false,
-
         },
         // username column takes a string cannot be null
         username:{
