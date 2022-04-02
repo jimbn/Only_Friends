@@ -37,12 +37,12 @@ User.init(
     },
     {
     // i think hooks are supposed to go here but not sure if we need it 
-    sequelize,
-    timeStamps:false,
-    freezeTableName:true,
-    underscored:true,
-    modelName:'user',
-}
+        sequelize,
+        timeStamps:false,
+        freezeTableName:true,
+        underscored:true,
+        modelName:'user'
+    }
 );
 
 module.exports = User;
