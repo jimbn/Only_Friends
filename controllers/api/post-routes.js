@@ -98,6 +98,59 @@ router.post('/', (req, res) => {
         category_name: req.body.category_name,
         user_id: /*req.session.user_id*/ req.body.user_id
     })
+    .then(postData => res.json(postData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+});
+
+
+// update a post title, post_body, or category_name 
+router.put('/:id', (req, res) => {
+    Post.update(
+        {
+            title: req.body.title,
+            post_body: req.body.post_body,
+            category_name: req.body.category_name
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    )
+    .then(postData => {
+        if(!postData) {
+            res.status(404).json({ message: 'No post found with this id' });
+            return;
+        }
+        res.json(postData)
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+});
+
+// Delete a post 
+router.delete('/:id', (req, res) => {
+    Post.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbPostData => {
+        if (!dbPostData) {
+            res.status(404).json({ message: 'No Post found with this id'});
+            return;
+        }
+        res.json(dbPostData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 module.exports = router; 
