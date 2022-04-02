@@ -17,7 +17,7 @@ async function logout(){
         document.location.replace('/');
     }else {
         // responds with error code
-        alert(response.statusText);
+        throw error(response.statusText);
     }
 }
 // listening for log out button click
