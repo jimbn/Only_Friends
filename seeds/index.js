@@ -1,6 +1,5 @@
 // importing seed functions from their respective files 
 const seedUsers = require('./user-seeds');
-const seedCategories = require('./category-seeds');
 const seedChannels = require('./channel-seeds');
 const seedPosts = require('./post-seeds');
 const seedComments = require('./comment-seeds');
@@ -20,9 +19,6 @@ const seedAll = async () => {
 
     await seedChannels();
     console.log('\n----- CHANNELS SEEDED -----\n');
-
-    await seedCategories();
-    console.log('\n----- CATEGORIES SEEDED -----\n');
 
     await seedComments();
     console.log('\n----- COMMENTS SEEDED -----\n');

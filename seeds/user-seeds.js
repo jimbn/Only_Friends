@@ -23,6 +23,7 @@ const userData = [
     password:'password4!'
 }
 ];
+
 // function to import seeds into the db upon command 'npm run seed'
 const seedUsers = () => User.bulkCreate(userData);
 // exporting the function that creates and inserts the seeds into db 

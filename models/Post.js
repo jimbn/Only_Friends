@@ -17,16 +17,15 @@ Post.init({
     // address string length in the future for title
     title: {
         type: DataTypes.STRING,
-        allowNull: false
-    },
-    preview: {
-        type: DataTypes.STRING,
-        // make it show the first few parts from the post
         allowNull: false,
-    //   len is for the length of characters min 2 and a max of 50
-        len: [2,50]
+         //   len is for the length of characters min 2 and a max of 50
+         len: [2,50]
     },
     post_body: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    category_name:{
         type: DataTypes.STRING,
         allowNull: false
     },
