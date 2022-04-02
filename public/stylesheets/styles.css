@@ -5,3 +5,23 @@ h1 {
     color: hotpink;
 
 }
+
+header {
+    background-color: black;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    
+}
+header h1 {
+    color:limegreen;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+nav {
+    display:flex;
+    align-self:center;
+}
+
+nav a {
+    color:limegreen;
+}

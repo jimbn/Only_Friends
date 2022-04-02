@@ -81,6 +81,7 @@ router.put('/:id', (req, res) => {
             email: req.body.email
         },
         {
+            individualHooks: true,
             where: {
                 id: req.params.id
             }
@@ -119,7 +120,47 @@ router.delete('/:id', (req, res) => {
     });
 });
 
+// USER login route 
+router.post('/login', (req, res) => {
+    User.findOne({
+        where: {
+            email: req.body.email
+        }
+    })
+    .then(userData => {
+        if(!userData) {
+            res.status(400).json({ message: 'No user associated with that email address' });
+            return;
+        }
 
+        const checkPass = userData.validatePassword(req.body.password);
+        if (!checkPass) {
+            res.status(400).json({ message: 'Incorrect password!' });
+            return;
+        }
 
+        req.session.save(() => {
+            req.session.user_id = userData.id,
+            req.session.username = userData.username;
+            req.session.loggedIn = true;
+
+            res.json({ user: userData, message: `You are now logged in as ${userData.username}`})
+        })
+    })
+});
+
+// USER logout route
+router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+
+        res.json({ message: 'You are now logged out' });
+    }
+    else {
+        res.status(404).end();
+    }
+});
 
 module.exports = router;

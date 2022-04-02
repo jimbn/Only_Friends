@@ -66,4 +66,9 @@ router.get('/post/:id', (req,res) => {
     });
 });
 
+// login route to renderlogin.handlebars
+router.get('/login', (req,res) => {
+    res.render('login');
+})
+
 module.exports = router;
