@@ -81,6 +81,7 @@ router.put('/:id', (req, res) => {
             email: req.body.email
         },
         {
+            individualHooks: true,
             where: {
                 id: req.params.id
             }
@@ -118,6 +119,7 @@ router.delete('/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
+
 
 
 
