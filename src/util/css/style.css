@@ -21,11 +21,24 @@ body {
 
 header {
     background-color: aqua;
+    z-index: 999;
 }
 
 ul {
     list-style-type: none;
     border: 2px solid blue;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border: 2px dotted black;
+}
+
+.carousel-item img { 
+    max-width: fit-content;
+    height: 500px;
+    border: none;
 }
 
 .commentDisplay {
