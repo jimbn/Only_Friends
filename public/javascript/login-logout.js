@@ -44,6 +44,7 @@ async function logout(event){
 }
 
 // listening for log out button click
-document.querySelector('#logout').addEventListener('click', logout);
-// listening for log out button click
-document.querySelector('#login').addEventListener('click', login)
+// document.querySelector('#logout').addEventListener('submit', logout);
+// listening for log in button click
+document.querySelector('#login').addEventListener('submit', login)
+
