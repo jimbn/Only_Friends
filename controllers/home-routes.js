@@ -68,6 +68,12 @@ router.get('/post/:id', (req,res) => {
 
 // login route to renderlogin.handlebars
 router.get('/login', (req,res) => {
+    // check for login and return to homepage if logged in
+    if(req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
     res.render('login');
 })
 

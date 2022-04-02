@@ -1,21 +1,24 @@
 // this gets connected to the handelbars file with a script tag
 
 // login handler function
-async function login(){
-    console.log('You clicked the login button');
-    const email  = document.querySelector('#email-field').value.trim();
-    const password  = document.querySelector('#password-field').value.trim();
-    if(email && password) {
-        const response = await fetch('/login', {
+async function loginHandler(event) {
+    event.preventDefault();
+
+    const email  = document.querySelector('#email-login').value.trim();
+    const password  = document.querySelector('#password-login').value.trim();
+
+    if (email && password) {
+        const response = await fetch('/api/users/login', {
             method: 'post',
             body: JSON.stringify({
                 email,
                 password
             }),
-            headers: { 'Content-Type' : 'application/json' }
+            headers: { 'Content-Type': 'application/json' }
         });
+
         if (response.ok) {
-            document.location.replace('/')
+            document.location.replace('/');
         } else {
             throw error(response.statusText);
         }
@@ -46,5 +49,5 @@ async function logout(event){
 // listening for log out button click
 // document.querySelector('#logout').addEventListener('submit', logout);
 // listening for log in button click
-document.querySelector('#login').addEventListener('submit', login)
+document.querySelector('.login-form').addEventListener('submit', loginHandler);
 

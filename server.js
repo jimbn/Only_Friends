@@ -26,12 +26,17 @@ app.use(session(sess));
 
 const hbs = exphbs.create({ });
 
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 app.use(express.static(path.join(__dirname, 'public')));
+
+// engine must be set up after app intialization above 
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
 
 // initiate routes 
 app.use(routes);
