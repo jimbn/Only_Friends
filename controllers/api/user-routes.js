@@ -81,6 +81,7 @@ router.put('/:id', (req, res) => {
             email: req.body.email
         },
         {
+            individualHooks: true,
             where: {
                 id: req.params.id
             }
