@@ -17,6 +17,7 @@ User.hasMany(Post, {
     constraints:false
 
 });
+
 User.hasOne(Channel, {
     foreignKey: 'user_id',
     constraints:false

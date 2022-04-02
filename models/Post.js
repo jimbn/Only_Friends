@@ -30,15 +30,6 @@ Post.init({
         allowNull: false
     },
     // this is our foreign key for our reference 
-    // category_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model: 'category',
-    //         key: 'id'
-    //     }
-
-    // },
-    // this is our foreign key for our reference 
     user_id: {
         type: DataTypes.INTEGER,
         references: {
