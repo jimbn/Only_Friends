@@ -51,8 +51,8 @@ router.get('/', (req, res) => {
     });
 });
 
-// find one channel by username
 
+// GET one channel by user_id
 router.get('/:user_id', (req, res) => {
     Channel.findOne({
         where: {
@@ -93,7 +93,7 @@ router.get('/:user_id', (req, res) => {
                                 }
                             ]
                         }
-                    },
+                    }
                 ]
             }
         ]

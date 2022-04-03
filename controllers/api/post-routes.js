@@ -43,7 +43,7 @@ router.get('/', (req, res) => {
 });
 
 
-// GET one post
+// GET one post by id
 router.get('/:id', (req, res) => {
     Post.findOne({
         where: {
@@ -89,6 +89,61 @@ router.get('/:id', (req, res) => {
         res.status(500).json(err);
     })
 });
+
+// GET all POSTS by category_name 
+router.get('/category/:category_name', (req, res) => {
+    Post.findAll({
+        where: {
+            category_name: req.params.category_name
+        },
+        attributes: [
+            'id',
+            'title',
+            'post_body',
+            'category_name',
+            'user_id'
+        ],
+        include: [
+            {
+                model: User,
+                attributes: [
+                    'id',
+                    ['username', 'post_owner']
+                ]
+            },
+            {
+                model: Comment,
+                attributes: [
+                    'id',
+                    'comment_text',
+                    'user_id'
+                ],
+                include: [
+                    {
+                        model: User,
+                        attributes: [
+                            'id',
+                            ['username', 'comment_owner'] 
+                        ]
+                    }
+                ]
+            }
+        ]
+    })
+    .then(postData => {
+        if(!postData) { 
+            res.status(404).json({ message: 'No posts found with that category name'});
+            return;
+        }
+        
+        res.json(postData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);    
+    });
+});
+
 
 // POST a new post
 router.post('/', (req, res) => {
