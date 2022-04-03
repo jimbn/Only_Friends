@@ -58,7 +58,7 @@ router.get('/post/:id', (req,res) => {
         res.render('single-post',{
             post
         // loggedIn:req.session.loggedIn
-        } );
+        });
     })
     .catch(err => {
         console.log(err);
@@ -75,6 +75,11 @@ router.get('/login', (req,res) => {
     }
 
     res.render('login');
-})
+});
+
+// signup route 
+router.get('/signup', (req, res) => {
+    res.render('signup');
+  });
 
 module.exports = router;
