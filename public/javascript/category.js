@@ -17,7 +17,7 @@ async function categorySearch(event) {
             }
         });
         if(response.ok) {
-            // NOTE this may need a different route
+            // NOTE this may need a different route or need to be .reload instead of .replace
             document.location.replace('/posts-by-category')
         }
     }
