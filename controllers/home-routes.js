@@ -68,7 +68,7 @@ router.get('/post/:id', (req,res) => {
 
 // route for when user clicks on a category name from hompeage aka landing page 
 router.get('/post/category/:category_name', (req,res) => {
-   
+   console.log('category_name: ', typeof req.params.category_name, req.params.category_name)
     Post.findAll({
         
         
@@ -112,11 +112,12 @@ router.get('/post/category/:category_name', (req,res) => {
             return;
         }
         // serialzie the post data 
-        const posts = postData.get({plain:true});
+        const posts = postData.map( post => post.get({plain:true}) );
 
         // pass data to template 
         res.render('posts-by-category',{
-            posts
+            posts,
+            category_name:posts[0].category_name
         // loggedIn:req.session.loggedIn
         });
     })
