@@ -61,20 +61,64 @@ router.get('/:id', (req, res) => {
 // POST create a Comment
 router.post('/', (req, res) => {
     Comment.create({
-    // uncomment if statment and req.session.user_id once we are working it into the front end 
+    // uncomment if statment and req.session.user_id [delete 'req.body.user_id'] once we are working it into the front end 
     // if(req.session) {
-        comment_text: req.body.comment_text,
-        user_id: req.body.user_id /* req.session.user_id*/,
-        post_id: req.body.post_id
+            comment_text: req.body.comment_text,
+            user_id: req.body.user_id /* req.session.user_id*/,
+            post_id: req.body.post_id
+        })
+        .then(commentData => res.json(commentData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
     //}
+});
+
+// PUT update comment text 
+router.put('/:id', (req, res) => {
+    Comment.update(
+        {
+            comment_text: req.body.comment_text
+        },
+        {
+            where: {
+                id: req.params.id
+            }   
+        }
+    )
+    .then(commentData => {
+        if(!commentData) {
+            res.status(404).json({ message: 'No comment found with this id' });
+            return;
+        }
+        res.json(commentData);
     })
-    .then(commentData => res.json(commentData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+
+// Delete a comment 
+router.delete('/:id', (req, res) => {
+    Comment.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(commentData => {
+        if(!commentData) {
+            res.status(404).json({ message: 'No comment found with this id' });
+            return;
+        }
+        res.json(commentData);
+    })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
     })
-});
-
-
+})
 
 module.exports = router;

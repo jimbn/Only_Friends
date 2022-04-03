@@ -106,7 +106,7 @@ router.post('/', (req, res) => {
 });
 
 
-// update a post title, post_body, or category_name 
+// PUT update a post title, post_body, or category_name 
 router.put('/:id', (req, res) => {
     Post.update(
         {
