@@ -1,27 +1,62 @@
-/* just dummy styling to make sure stylesheet is linking  */
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
-h1 {
-    font-size: 40px;
-    color: hotpink;
+body {
+    margin: 0;
+    padding: 0;
+}
 
+.scroll {
+    display: block;
+    padding: 5px;
+    margin: 5px;
+    height: 100px;
+    overflow: auto;
+}
+
+.scrollComment{
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    height: 40rem;
+    overflow: auto;
 }
 
 header {
-    background-color: black;
-    display:flex;
-    flex-direction:row;
-    justify-content: space-evenly;
-    
-}
-header h1 {
-    color:limegreen;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-nav {
-    display:flex;
-    align-self:center;
+    background-color: aqua;
+    z-index: 999;
 }
 
-nav a {
-    color:limegreen;
+ul {
+    list-style-type: none;
+    border: 2px solid blue;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border: 2px dotted black;
+}
+
+.carousel-item img { 
+    max-width: fit-content;
+    height: 500px;
+    border: none;
+}
+
+.commentDisplay {
+    border: 2px solid lightblue;
+}
+
+.floatRight {
+    text-align: right;
+}
+
+.listPadding {
+    padding: 3px;
+}
+
+.commentPadding {
+    padding: 10px;
 }
