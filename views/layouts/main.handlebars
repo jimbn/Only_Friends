@@ -13,31 +13,7 @@
 
 <body>
     {{!-- Header --}}
-  <header class="container position-sticky top-0">
-    <div class="row">
-      <div class="col-3">
-                <input type="text"/>
-                <button>Search</button>
-      </div>
-      <h1 class="col-6"> <a href="/">Only_Friends</a> </h1>
-      <div class="col-2 container">
-        <div class="row">
-          {{#if loggedIn}}
-            <a href="/">logout</a>
-          {{else}}
-          {{!-- <a href="/login">Login</a>
-          <a href="/signup">Signup</a> --}}
-            <div>
-              <button id="open-login-modal">Log In</button>
-            </div>
-            <div>
-              <button id="open-signup-modal">Sign Up</button>
-            </div>
-          {{/if}}
-        </div>
-      </div>
-    </div>
-  </header>
+    {{> header}}
   
     {{!-- body gets replaced by the views --}}
   {{{body}}}

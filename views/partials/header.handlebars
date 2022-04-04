@@ -1,0 +1,25 @@
+  <header class="container position-sticky top-0">
+    <h1 class=""> <a href="/">Only_Friends</a> </h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <input type="text"/>
+          <button class="col">Search</button>
+        </div>
+        <div class="col-4">
+          <div class="">
+            {{#if loggedIn}}
+              <a href="/">logout</a>
+            {{else}}
+              <div>
+                <button id="open-login-modal">Log In</button>
+              </div>
+              <div>
+                <button id="open-signup-modal">Sign Up</button>
+              </div>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
