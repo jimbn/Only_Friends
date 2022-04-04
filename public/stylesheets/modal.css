@@ -1,3 +1,11 @@
+:root {
+    /* Odd but trendy */
+    --background-color: rgb(125,180,181);
+    --text-color: rgb(0,0,0);
+    --container-color: rgb(224,239,241);
+    --accent-color:rgb(104,1,72);
+}
+
 .modalHide {
     display: none;
 }
@@ -10,6 +18,12 @@
     z-index:990;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(0, 0, 0, 0.75);
     margin: 0px;
+}
+
+.login-form {
+    border: 2px solid var(--accent-color);
+    background-color: var(--background-color);
+    padding: 20px;
 }

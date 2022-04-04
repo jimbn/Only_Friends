@@ -12,8 +12,8 @@
 }
 
 header {
-    background-image: linear-gradient(var(--accent-color), var(--background-color));
-    border-bottom: 8px double var(--container-color);
+    background-image: linear-gradient(var(--container-color), var(--background-color));
+    border-bottom: 8px double var(--accent-color);
     z-index: 999;
 }
 
@@ -21,9 +21,13 @@ header {
     text-align: center;
 }
 
+.dash {
+    padding-bottom: 5px;
+}
+
 a {
     text-decoration: none;
-    color: var(--container-color);
+    color: var(--background-color);
     text-shadow: 2px 2px 4px black, 0 0 8px white ;
 }
 
@@ -31,16 +35,27 @@ a:hover {
     color: var(--background-color);
 }
 
+.userBtn {
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--container-color);
+    border: none;
+    text-align: right;
+}
+
 body {
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(var(--background-color) , var(--accent-color));
+    background-color: var(--background-color);
 }
 
+.top-padding{
+    padding: 5px 0 0 0;
+}
 
 h2 {
     padding: 5px;
-    border-bottom: 2px solid var(--container-color);
+    border-bottom: 2px solid var(--accent-color);
     text-shadow:  0 0 8px white ;
 }
 
