@@ -1,10 +1,33 @@
+:root {
+    /* Odd but trendy */
+    --background-color: rgb(125,180,181);
+    --text-color: rgb(0,0,0);
+    --container-color: rgb(224,239,241);
+    --accent-color:rgb(104,1,72);
+}
+
+body {
+    background-image: linear-gradient(var(--background-color) , var(--accent-color));
+}
+
 *{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: var(--text-color);
 }
 
 body {
     margin: 0;
     padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+h2 {
+    padding: 5px;
+    border-bottom: 2px solid var(--container-color);
 }
 
 .scroll {
@@ -24,19 +47,20 @@ body {
 }
 
 header {
-    background-color: aqua;
+    /* background-color: var(--background-color); */
     z-index: 999;
 }
 
-ul {
+
+ul{
     list-style-type: none;
-    border: 2px solid blue;
 }
 
-img {
+.cat-img{
     width: 150px;
     height: 150px;
-    border: 2px dotted black;
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
 .carousel-item img { 
