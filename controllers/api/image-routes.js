@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const path = require('path');
 const { User, Post, Comment, Channel } = require('../../models');
 const multer = require('multer');
 
@@ -15,8 +16,12 @@ const imageStorageEngine = multer.diskStorage({
 
 const upload = multer({ storage: imageStorageEngine });
 
+// Get an image -> maybe a front end route? 
+router.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"))
+});
 
-// POST 1 single image
+// // POST 1 single image
 router.post('/single', upload.single('image'), (req, res) => {
     console.log(req.file);
     res.send('Image file successfully uploaded');
@@ -27,6 +32,8 @@ router.post('/multiple', upload.array('images', 3), (req, res) => {
   console.log(req.files);
   res.send('Multiple images uploaded succesfully');
 });
+
+
 
 
 module.exports = router; 
