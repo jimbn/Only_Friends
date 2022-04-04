@@ -18,7 +18,7 @@ async function loginHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.reload('/');
         } else {
             throw error(response.statusText);
         }
