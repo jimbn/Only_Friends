@@ -22,7 +22,7 @@
     margin: 0px;
 }
 
-.login-form {
+.login-form, .signup-form {
     border: 2px solid var(--accent-color);
     background-color: var(--background-color);
     padding: 20px;
