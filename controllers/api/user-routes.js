@@ -132,7 +132,8 @@ router.post('/login', (req, res) => {
             res.status(400).json({ message: 'No user associated with that email address' });
             return;
         }
-
+// NOTE: the password is triggering this block of code
+// ****
         const checkPass = userData.validatePassword(req.body.password);
         if (!checkPass) {
             res.status(400).json({ message: 'Incorrect password!' });

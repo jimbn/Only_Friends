@@ -6,7 +6,7 @@ async function categorySearch(event) {
     if (categoryName) {
         // gets data for category
         // NOTE this route may need /api to be changed
-        const response = await fetch(`api/post/${categoryName}`, {
+        const response = await fetch(`/api/post/category/${categoryName}`, {
             method: 'POST',
             body: JSON.stringify({
                 title,
