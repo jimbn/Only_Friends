@@ -9,8 +9,9 @@ async function logoutUser() {
     if (response.ok) {
        
         document.location.replace('/');
+        return
     } else {
-        alert(response.statusText);
+        console.log(response.statusText + ' ' + response.status);
     }
 };
 // EVENT LISTENER TO LOGOUT THE USER WHEN THEY CLICK BUTTON 
