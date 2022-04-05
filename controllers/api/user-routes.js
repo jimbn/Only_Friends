@@ -122,6 +122,7 @@ router.delete('/:id', (req, res) => {
 
 // USER login route 
 router.post('/login', (req, res) => {
+    console.log(req.body);
     User.findOne({
         where: {
             email: req.body.email
@@ -134,6 +135,7 @@ router.post('/login', (req, res) => {
         }
 
         const checkPass = userData.validatePassword(req.body.password);
+        console.log(checkPass);
         if (!checkPass) {
             res.status(400).json({ message: 'Incorrect password!' });
             return;
