@@ -2,6 +2,13 @@
 const { Post } = require('../models');
 // creating variable, an array ,  to store user seeds 
 const postData = [
+// {
+//     title: 's',
+//     post_body: 's',
+//     category_name: 'Fitness',
+//     user_id: 1,
+
+// },
 {
     title: 'Hello World 1',
     post_body: ' a;sldkfjalser ja;lsdfja;woeirjff;laks ;aslldkfjl;asjdfoin ;alskdfjp;kasd jl;akjsdf sj ;lkasjdf;laksjdfopewa ;lkjasdfl kjaweoi ;laskdjfi ;lkajsfpoujeag ;lkajsdf asr',
