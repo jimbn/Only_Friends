@@ -134,11 +134,11 @@ router.post('/login', (req, res) => {
         }
 // NOTE: the password is triggering this block of code
 // ****
-        const checkPass = userData.validatePassword(req.body.password);
-        if (!checkPass) {
-            res.status(400).json({ message: 'Incorrect password!' });
-            return;
-        }
+        // const checkPass = userData.validatePassword(req.body.password);
+        // if (!checkPass) {
+        //     res.status(400).json({ message: 'Incorrect password!' });
+        //     return;
+        // }
 
         req.session.save(() => {
             req.session.user_id = userData.id,

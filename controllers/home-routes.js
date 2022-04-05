@@ -7,7 +7,7 @@ const { Post, User, Channel, Comment } = require('../models');
 // this will show the channels /can be changed to show something else 
 // not sure exactly what we want here 
 router.get('/', (req, res) => {
-
+// check if the user is logged in then render the homepage 
     // idk what to put here i was going to put channel but theres no channel_name, 
     // this needs to be determined 
     res.render('homepage');
