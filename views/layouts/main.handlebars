@@ -13,29 +13,12 @@
 
 <body>
     {{!-- Header --}}
-  <header class="container position-sticky top-0">
-    <div class="row">
-      <div class="col-3">
-                <input type="text"/>
-                <button>Search</button>
-      </div>
-      <h1 class="col-6"> <a href="/">Only_Friends</a> </h1>
-      <div class="col-2">
-        {{#if loggedIn}}
-          <a href="/">logout</a>
-        {{else}}
-          {{!-- <a href="/login">Login</a>
-          <a href="/signup">Signup</a> --}}
-          <button id="open-login-modal">Log In</button>
-          <button id="open-signup-modal">Sign Up</button>
-        {{/if}}
-      </div>
-    </div>
-  </header>
+    {{> header}}
   
     {{!-- body gets replaced by the views --}}
+  <div class="top-padding">
   {{{body}}}
-
+  </div>
 {{!-- Modals for login/signup --}}
   {{> login-modal}}
   {{> signup-modal}}
@@ -52,6 +35,7 @@
   {{else}}
   <script src="/javascript/login.js"></script>
   <script src="/javascript/signup.js"></script>
+  <script src="/javascript/utils/modal.js"></script>
   {{/if}}
 </body>
 

@@ -1,10 +1,62 @@
+:root {
+    /* Odd but trendy */
+    --background-color: rgb(125,180,181);
+    --text-color: rgb(0,0,0);
+    --container-color: rgb(224,239,241);
+    --accent-color:rgb(104,1,72);
+}
+
 *{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+}
+
+header {
+    background-image: linear-gradient(var(--container-color), var(--background-color));
+    border-bottom: 8px double var(--accent-color);
+    z-index: 999;
+}
+
+.header-title {
+    text-align: center;
+}
+
+.dash {
+    padding-bottom: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--background-color);
+    text-shadow: 2px 2px 4px black, 0 0 8px white ;
+}
+
+a:hover {
+    color: var(--background-color);
+}
+
+.userBtn {
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--container-color);
+    border: none;
+    text-align: right;
 }
 
 body {
     margin: 0;
     padding: 0;
+    background-color: var(--background-color);
+}
+
+.top-padding{
+    padding: 5px 0 0 0;
+}
+
+h2 {
+    padding: 5px;
+    border-bottom: 2px solid var(--accent-color);
+    text-shadow:  0 0 8px white ;
 }
 
 .scroll {
@@ -23,20 +75,24 @@ body {
     overflow: auto;
 }
 
-header {
-    background-color: aqua;
-    z-index: 999;
-}
 
-ul {
+
+
+ul{
     list-style-type: none;
-    border: 2px solid blue;
 }
 
-img {
+.cat-img{
     width: 150px;
     height: 150px;
-    border: 2px dotted black;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.cat-img:hover {
+    /* width:200px;
+    height:200px; */
+    box-shadow: 0 0 15px var(--container-color);
 }
 
 .carousel-item img { 

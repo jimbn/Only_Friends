@@ -128,12 +128,12 @@ router.get('/post/category/:category_name', (req, res) => {
         });
 });
 // route to display all posts by user when using search friends button 
-router.get('/post/user/test/:username', (req, res) => {
+router.get('/post/user/page/:username', (req, res) => {
   User.findOne({
       where:{
           username:req.params.username
       },
-      attributes:['username']
+      attributes:['username'],
       
   })
   .then(postData => {
