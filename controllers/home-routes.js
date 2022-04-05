@@ -13,7 +13,9 @@ router.get('/', (req, res) => {
 
     // idk what to put here i was going to put channel but theres no channel_name, 
     // this needs to be determined 
+
     res.render('homepage',{loggedIn: req.session.loggedIn});
+
 });
 
 // find one post , when user clicks on a single post *

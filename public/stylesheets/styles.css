@@ -4,6 +4,22 @@
     --text-color: rgb(0,0,0);
     --container-color: rgb(224,239,241);
     --accent-color:rgb(104,1,72);
+
+    /* Friend */
+    /*  rgb(210,72,88) rgb(234,176,94) */
+    /* --background-color: rgb(234,134,118); 
+    --text-color: black;
+    --container-color: rgb(253,238,205);
+    --accent-color:rgb(75,56,49); */
+
+    /* Adrift in dreams */
+    /*  */
+    /* samm like background */
+    /* --background-color: rgb(168,219,168); 
+    --text-color: black;
+    --container-color: rgb(121,189,154);
+    --accent-color:rgb(11,72,107); */
+
 }
 
 *{
@@ -28,7 +44,7 @@ header {
 a {
     text-decoration: none;
     color: var(--background-color);
-    text-shadow: 2px 2px 4px black, 0 0 8px white ;
+    text-shadow: 1px 1px 2px black, 0 0 8px white, 0 0 5px black;
 }
 
 a:hover {
@@ -37,16 +53,20 @@ a:hover {
 
 .userBtn {
     text-decoration: none;
-    background-color: rgba(0, 0, 0, 0);
-    color: var(--container-color);
+    color: var(--text-color);
+    background-color: var(--container-color);
     border: none;
     text-align: right;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-weight: bold;
+    
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--background-color);
+    background-color: var(--container-color);
 }
 
 .top-padding{
@@ -92,7 +112,7 @@ ul{
 .cat-img:hover {
     /* width:200px;
     height:200px; */
-    box-shadow: 0 0 15px var(--container-color);
+    box-shadow: 0 0 15px yellow;
 }
 
 .carousel-item img { 

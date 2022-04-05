@@ -1,11 +1,3 @@
-:root {
-    /* Odd but trendy */
-    --background-color: rgb(125,180,181);
-    --text-color: rgb(0,0,0);
-    --container-color: rgb(224,239,241);
-    --accent-color:rgb(104,1,72);
-}
-
 .modalHide {
     display: none;
 }
