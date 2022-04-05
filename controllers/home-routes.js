@@ -10,7 +10,84 @@ router.get('/', (req, res) => {
 
     // idk what to put here i was going to put channel but theres no channel_name, 
     // this needs to be determined 
-    res.render('homepage');
+    // find post to populate as featured/most recent post
+    Post.findAll({
+        attributes: [
+            'id',
+            'title',
+            'post_body',
+            'category_name',
+            'created_at'
+        ],
+        order: [['created_at', 'DESC']],
+        include: [
+            {
+                model: Comment, 
+                attributes: [
+                    'id',
+                    'comment_text',
+                    'user_id',
+                    'post_id',
+                    'created_at'
+                ],
+                include: {
+                    // username of commenter
+                    model: User, 
+                    attributes: ['username']
+                }
+            },
+            {
+                // owner of post
+                model: User, 
+                attributes: ['username']
+            }
+        ]
+    })
+    .then(postData =>{
+        if(!postData) {
+            res.status(404).json({message:"no post found with this id"});
+            return;
+        }
+        // serialzie the post data 
+        const posts = postData.map( post => post.get({plain:true}) );
+
+        // pass data to template 
+        res.render('homepage',{
+            posts,
+            category_name:posts[0].category_name
+        // loggedIn:req.session.loggedIn
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+
+    
+
+
+    // find user to populate on landing
+    User.findAll({
+        attributes: [
+            'id',
+            'username'
+        ],
+        include: [
+            {model: Post, attributes: ['title']}
+        ]
+    })
+    .then(userData =>{
+        // serialzie the post data 
+        const users = userData.map(user => user.get({plain:true}));
+        // pass data to template 
+        res.render('homepage', {
+            users
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 // find one post , when user clicks on a single post ** as of 10 am april 1 not working
