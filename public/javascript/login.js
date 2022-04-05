@@ -21,7 +21,7 @@ async function loginHandler(event) {
         });
 
         if (response.ok) {
-            document.location.reload('/');
+            // document.location.reload('/');
         } else {
             console.log(response.statusText + ' ' + response.status);
         }
@@ -35,4 +35,3 @@ async function loginHandler(event) {
 
 // listening for log in button click
 document.querySelector('#login-btn').addEventListener('click', loginHandler);
-

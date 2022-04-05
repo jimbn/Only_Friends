@@ -21,7 +21,7 @@ async function signupFormHandler(event) {
       if (response.ok) {
         console.log('success');
       } else {
-        throw err(response.statusText);
+        alert(response.statusText);
         
       }
     }
