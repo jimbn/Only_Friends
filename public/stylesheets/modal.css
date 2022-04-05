@@ -27,3 +27,16 @@
     background-color: var(--background-color);
     padding: 20px;
 }
+
+.f-space {
+    padding-bottom: 5px;
+}
+
+.submit-btn {
+    margin: 10px 0 0 0;
+    
+}
+
+.submit-btn button {
+    padding: 0 57px;
+}
