@@ -7,7 +7,7 @@ const { Post, User, Channel, Comment } = require('../models');
 // this will show the channels /can be changed to show something else 
 // not sure exactly what we want here 
 router.get('/', (req, res) => {
-    
+
 
     // idk what to put here i was going to put channel but theres no channel_name, 
     // this needs to be determined 
@@ -129,32 +129,64 @@ router.get('/post/category/:category_name', (req, res) => {
 });
 // route to display all posts by user when using search friends button 
 router.get('/post/user/page/:username', (req, res) => {
-  User.findOne({
-      where:{
-          username:req.params.username
-      },
-      attributes:['username'],
-      
-  })
-  .then(postData => {
-    if (!postData) {
-        res.status(404).json({ message: "no post found with this id" });
-        return;
-    }
-    // serialzie the post data 
-    const post = postData.get({ plain: true });
+    let user;
+    User.findOne({
+        where: {
+            username: req.params.username
+        },
+        attributes: ['username', 'id'],
+        includes: [
+            {
+                model: Post,
+                attributes: ['id',
+                    'title',
+                    'post_body',
+                    'category_name',
+                    'created_at'
+                ]
 
-    // pass data to template 
-    res.render('posts-by-user', {
-        post,
-       
-        // loggedIn:req.session.loggedIn
-    });
-})
-.catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-});
+            }
+        ]
+
+    })
+        .then(userData => {
+            if (!userData) {
+                res.status(404).json({ message: "no post found with this id" });
+                return;
+            }
+            // serialzie the post data 
+
+            user = userData.get({ plain: true });
+            console.log("this is userdata:", user);
+            Post.findAll({
+                where: {
+                    user_id: user.id
+                },
+                includes: [{
+                    model: User,
+
+                }]
+            })
+                .then(postData => {
+                    if (!postData) {
+                        res.status(404).json({ message: 'this friend hasnt posted anything yet!' });
+                        return;
+                    }
+                    const posts = postData.map(post => post.get({ plain: true }));
+                    console.log("this is post", posts)
+                    res.render('posts-by-user', {
+                        user,
+                        posts,
+
+
+                        // loggedIn:req.session.loggedIn
+                    })
+                });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 
 });
 
