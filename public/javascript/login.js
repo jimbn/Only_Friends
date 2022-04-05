@@ -6,17 +6,16 @@ async function loginHandler(event) {
 
     const email  = document.querySelector('#email-login').value.trim();
     const password  = document.querySelector('#password-login').value.trim();
-    console.log(email);
-    console.log(password);
+   
 
     if (email && password) {
         // the password is not making it through the checks of this back end route in the user-routes.js
         const response = await fetch('/api/users/login', {
-            method: 'POST',
+            method: 'post',
             body: JSON.stringify({
                 email,
                 password
-            }),
+        }),
             headers: { 'Content-Type': 'application/json' }
         });
 
