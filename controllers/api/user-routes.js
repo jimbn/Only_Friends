@@ -160,14 +160,16 @@ router.post('/login', (req, res) => {
             return;
         }
 
-            req.session.save(() => {
-                req.session.user_id = userData.id,
-                req.session.username = userData.username;
-                req.session.loggedIn = true;
+        req.session.save(() => {
+            req.session.user_id = userData.id,
+            req.session.username = userData.username;
+            req.session.loggedIn = true;
 
-                res.json({ user: userData, message: `You are now logged in as ${userData.username}` })
-            });
+            res.json({ user: userData, message: `You are now logged in as ${userData.username}` })
+            console.log(req.session)
         });
+        
+    });
 });
 
 // USER logout route

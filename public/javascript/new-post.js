@@ -27,7 +27,7 @@ async function newFormHandler(event) {
       body: JSON.stringify({
         title,
         post_body,
-        category_name
+        category_name,
       }),
       headers: {
         'Content-Type': 'application/json'
