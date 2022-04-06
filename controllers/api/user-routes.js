@@ -36,25 +36,17 @@ router.get('/:id', (req, res) => {
             }
         ]
     })
-        .then(userData => {
-            if (!userData) {
-                res.status(404).json({ message: 'No user found with this id number' });
-                return;
-            }
-            // res.json(userData)
-
-             // serialzie the post data 
-             const user = userData.get({ plain: true });
-             // pass data to template 
-             res.render('posts-by-user', {
-                user
-                // loggedIn:req.session.loggedIn
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err)
-        });
+    .then(userData => {
+        if (!userData) {
+            res.status(404).json({ message: 'No user found with this id number' });
+            return;
+        }
+        res.json(userData)
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err)
+    });
 });
 
 
