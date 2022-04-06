@@ -1,0 +1,15 @@
+{{#each comments as |comment|}}
+    <div class="article-container">
+        <div>
+            <div>
+                {{user.username}}
+                <div> 
+                    {{created_at}} 
+                </div>
+            </div>
+        </div>
+        <div>
+            {{coments.comment_text}}
+        </div>
+    </div>
+{{/each}}

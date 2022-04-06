@@ -8,6 +8,9 @@
           <label for="new-body">Post Body</label>
           <textarea name="new-body" id="new-body" cols="30" rows="10" placeholder="Text"></textarea>
       </div>
+      <div action="/single" method="POST" enctype="multipart/form-data" >
+          <input type="file" name="image" />
+      </div>
       <div class="mb-3">
           <label for="new-category"></label>
           <select name="new-category" id="new-category">
@@ -33,7 +36,7 @@
               <option value="Travel">Travel</option>
           </select>
       </div>
-      <button id="submit-post">Post</button>
+      <button id="submit-post" type="submit">Post</button>
       <button id="close-btn">Cancel</button>
     </form>
 
