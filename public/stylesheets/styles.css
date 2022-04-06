@@ -137,3 +137,12 @@ ul{
 .commentPadding {
     padding: 10px;
 }
+
+.article-container {
+    border: 2px solid var(--accent-color);
+    margin: 2px;
+}
+
+textarea {
+    resize: none;
+}

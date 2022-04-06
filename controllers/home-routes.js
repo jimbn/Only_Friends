@@ -10,16 +10,16 @@ router.get('/', (req, res) => {
 // check if the user is logged in then render the homepage 
     // idk what to put here i was going to put channel but theres no channel_name, 
     // this needs to be determined 
-    User.findAll({
-        attributes:[
-            'username'
-        ]
-    })
-    .then(userData => {
-        const users = userData.map(user => user.get({ plain: true }));
-    })
+    // User.findAll({
+    //     attributes:[
+    //         'username'
+    //     ]
+    // })
+    // .then(userData => {
+    //     const users = userData.map(user => user.get({ plain: true }));
+    // })
     res.render('homepage',{
-        users,
+        // users,
         loggedIn: req.session.loggedIn});
 
 });
@@ -67,8 +67,8 @@ router.get('/post/:id', (req, res) => {
 
             // pass data to template 
             res.render('single-post', {
-                post
-                // loggedIn:req.session.loggedIn
+                post,
+                loggedIn:req.session.loggedIn
             });
         })
         .catch(err => {
