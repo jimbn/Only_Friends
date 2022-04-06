@@ -119,8 +119,8 @@ router.get('/post/category/:category_name', (req, res) => {
             // pass data to template 
             res.render('posts-by-category', {
                 posts,
-                category_name: posts[0].category_name
-                // loggedIn:req.session.loggedIn
+                category_name: posts[0].category_name,
+                loggedIn:req.session.loggedIn
             });
         })
         .catch(err => {
@@ -178,9 +178,7 @@ router.get('/post/user/page/:username', (req, res) => {
                     res.render('posts-by-user', {
                         user,
                         posts,
-
-
-                        // loggedIn:req.session.loggedIn
+                        loggedIn:req.session.loggedIn
                     })
                 });
         })
