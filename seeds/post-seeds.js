@@ -65,6 +65,13 @@ const postData = [
     user_id: 2,
     // channel_id: 2
 },
+{
+    title: 'Hello World 8',
+    post_body: ' a;sldkfjalser ja;lsdfja;woeirjff;laks ;aslldkfjl;asjdfoin ;alskdfjp;kasd jl;akjsdf sj ;lkasjdf;laksjdfopewa ;lkjasdfl kjaweoi ;laskdjfi ;lkajsfpoujeag ;lkajsdf asr',
+    category_name: 'Business', 
+    user_id: 2,
+    // channel_id: 2
+},
 ];
 // function to import seeds into the db upon command 'npm run seed'
 const seedPosts = () => Post.bulkCreate(postData);
