@@ -10,8 +10,17 @@ router.get('/', (req, res) => {
 // check if the user is logged in then render the homepage 
     // idk what to put here i was going to put channel but theres no channel_name, 
     // this needs to be determined 
-
-    res.render('homepage',{loggedIn: req.session.loggedIn});
+    User.findAll({
+        attributes:[
+            'username'
+        ]
+    })
+    .then(userData => {
+        const users = userData.map(user => user.get({ plain: true }));
+    })
+    res.render('homepage',{
+        users,
+        loggedIn: req.session.loggedIn});
 
 });
 
