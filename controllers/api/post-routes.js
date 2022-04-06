@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require('../../models');
+const upload = require('../../public/javascript/image-engine');
 
 // get all posts
 router.get('/', (req, res) => {
@@ -9,7 +10,8 @@ router.get('/', (req, res) => {
             'title',
             'post_body',
             'category_name',
-            'created_at'
+            'created_at',
+            'image_path'
         ],
         order: [['created_at', 'DESC']],
         include: [
@@ -54,7 +56,8 @@ router.get('/:id', (req, res) => {
             'title',
             'post_body',
             'category_name',
-            'created_at'
+            'created_at',
+            'image_path'
         ],
         include: [
             {
@@ -101,7 +104,8 @@ router.get('/category/:category_name', (req, res) => {
             'title',
             'post_body',
             'category_name',
-            'user_id'
+            'user_id',
+            'image_path'
         ],
         include: [
             {
@@ -145,13 +149,18 @@ router.get('/category/:category_name', (req, res) => {
 });
 
 
-// POST a new post
-router.post('/', (req, res) => {
+
+// POST new POST w/ IMAGE optional; 
+router.post('/', upload.single('post_image') ,(req, res) => {
+
+    console.log(req.file)
+
     Post.create({
         title: req.body.title,
         post_body: req.body.post_body,
         category_name: req.body.category_name,
-        user_id: /*req.session.user_id*/ req.body.user_id
+        user_id: /*req.session.user_id*/ req.body.user_id,
+        image_path: req.file.path
     })
     .then(postData => res.json(postData))
     .catch(err => {
@@ -159,6 +168,21 @@ router.post('/', (req, res) => {
         res.status(500).json(err);
     })
 });
+
+// POST a new post
+// router.post('/', (req, res) => {
+//     Post.create({
+//         title: req.body.title,
+//         post_body: req.body.post_body,
+//         category_name: req.body.category_name,
+//         user_id: /*req.session.user_id*/ req.body.user_id
+//     })
+//     .then(postData => res.json(postData))
+//     .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     })
+// });
 
 
 // PUT update a post title, post_body, or category_name 

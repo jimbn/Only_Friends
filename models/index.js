@@ -17,11 +17,6 @@ Post.belongsTo(User, {
     constraints:false
 });
 
-// Post.belongsTo(Channel, {
-//     foreignKey: 'channel_id',
-//     constraints:false
-// });
-
 Comment.belongsTo(User, {
     foreignKey: 'user_id',
     constraints:false
@@ -34,12 +29,10 @@ Comment.belongsTo(Post, {
 
 Channel.belongsTo(User, {
     foreignKey: 'user_id',
-    constraints:false
+    constraints: false
 });
 
-
 // 1-to-Many relations 
-
 User.hasMany(Comment, {
     foreignKey: 'user_id',
     constraints:false
