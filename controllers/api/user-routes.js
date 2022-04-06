@@ -46,7 +46,7 @@ router.get('/:id', (req, res) => {
              // serialzie the post data 
              const user = userData.get({ plain: true });
              // pass data to template 
-             res.render('single-post', {
+             res.render('posts-by-user', {
                 user
                 // loggedIn:req.session.loggedIn
             });
