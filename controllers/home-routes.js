@@ -190,21 +190,4 @@ router.get('/post/user/page/:username', (req, res) => {
 });
 
 
-
-// login route to renderlogin.handlebars/using modal now
-// router.get('/login', (req,res) => {
-//     // check for login and return to homepage if logged in
-//     if(req.session.loggedIn) {
-//         res.redirect('/');
-//         return;
-//     }
-
-//     res.render('login');
-// });
-
-// signup route commented out bc not rendering page anymore /using modal 
-// router.get('/signup', (req, res) => {
-//     res.render('signup');
-//   });
-
 module.exports = router;
