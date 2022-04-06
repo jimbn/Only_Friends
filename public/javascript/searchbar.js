@@ -31,11 +31,4 @@ async function getAllUsers(event) {
 
 
 
-// function to handel search bar when clicked
-function searchBarHandeler(event) {
-
-
-};
-
-
 searchButtonEl.addEventListener('click', getAllUsers);
