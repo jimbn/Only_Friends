@@ -17,10 +17,12 @@ router.get('/', (req, res) => {
     })
     .then(userData => {
         const users = userData.map(user => user.get({ plain: true }));
+
+
+        res.render('homepage',{
+            users,
+            loggedIn: req.session.loggedIn});
     })
-    res.render('homepage',{
-        users,
-        loggedIn: req.session.loggedIn});
 
 });
 
