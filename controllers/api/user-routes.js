@@ -36,17 +36,17 @@ router.get('/:id', (req, res) => {
             }
         ]
     })
-    .then(userData => {
-        if (!userData) {
-            res.status(404).json({ message: 'No user found with this id number' });
-            return;
-        }
-        res.json(userData)
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err)
-    });
+        .then(userData => {
+            if (!userData) {
+                res.status(404).json({ message: 'No user found with this id number' });
+                return;
+            }
+            res.json(userData)
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err)
+        });
 });
 
 
@@ -133,16 +133,9 @@ router.post('/login', (req, res) => {
                 res.status(400).json({ message: 'No user associated with that email address' });
                 return;
             }
-            
             // NOTE: the password is triggering this block of code
             // ****
-            console.log(req.body.password);
-            console.log(userData.dataValues);
-            const userPassword = userData.dataValues.password
-
-            // const checkPass = userData.validatePassword(req.body.password);
-             const checkPass = userPassword === req.body.password;
-            console.log(checkPass)
+            const checkPass = userData.validatePassword(req.body.password);
             if (!checkPass) {
                 res.status(400).json({ message: 'Incorrect password!' });
                 return;
