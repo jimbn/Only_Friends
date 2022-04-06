@@ -137,3 +137,13 @@ ul{
 .commentPadding {
     padding: 10px;
 }
+/* samm added margin bottom so cards arent flush up on eachother, and a border on each card  */
+.card{
+margin-bottom: 15px;
+border:2px solid grey;
+}
+/* samm added styling to card header  */
+.card-header {
+    background-color:rgb(125,180,181);
+    color:whitesmoke;
+}

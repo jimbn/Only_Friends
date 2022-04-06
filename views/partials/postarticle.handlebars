@@ -1,17 +1,21 @@
 {{#if title}}
 <article class="post">
-    <div class="title">
-        <p> {{title}}</p>
-        <p>
-            {{post_body}}
-        </p>
+    <div class="card">
+        <h5 class="card-header">{{user.username}}</h5>
+        <div class="card-body">
+            <h5 class="card-title">{{title}}</h5>
 
+            <p class="card-text">
+                {{post_body}}
+            </p>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">posted by {{user.username}} on
+                {{created_at}}
+                |
+                <a href="/post/{{id}}">{{comments.length}} comment(s)</a></small>
+        </div>
     </div>
-    <div class="meta">
-        posted by {{user.username}} on
-        {{created_at}}
-        |
-        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
-    </div>
+
 </article>
 {{/if}}
