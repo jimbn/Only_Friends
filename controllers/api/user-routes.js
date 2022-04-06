@@ -41,7 +41,15 @@ router.get('/:id', (req, res) => {
                 res.status(404).json({ message: 'No user found with this id number' });
                 return;
             }
-            res.json(userData)
+            // res.json(userData)
+
+             // serialzie the post data 
+             const user = userData.get({ plain: true });
+             // pass data to template 
+             res.render('single-post', {
+                user
+                // loggedIn:req.session.loggedIn
+            });
         })
         .catch(err => {
             console.log(err);
