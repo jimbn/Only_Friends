@@ -182,7 +182,7 @@ router.post('/',  withAuth, upload.single('post_image'), (req, res) => {
 });
 
 // PUT update a post title, post_body, or category_name 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth,(req, res) => {
     Post.update(
         {
             title: req.body.title,
@@ -209,7 +209,7 @@ router.put('/:id', (req, res) => {
 });
 
 // Delete a post 
-router.delete('/:id', (req, res) => {
+router.delete('/:id',withAuth, (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id
