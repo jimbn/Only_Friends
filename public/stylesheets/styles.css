@@ -145,7 +145,7 @@ ul{
 
 textarea {
     resize: none;
-
+}
 /* samm added margin bottom so cards arent flush up on eachother, and a border on each card  */
 .card{
 margin-bottom: 15px;
