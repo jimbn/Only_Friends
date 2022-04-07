@@ -8,8 +8,8 @@
           <label for="new-body">Post Body</label>
           <textarea name="new-body" id="new-body" cols="30" rows="10" placeholder="Text"></textarea>
       </div>
-      <div action="/single" method="POST" enctype="multipart/form-data" >
-          <input type="file" name="image" />
+      <div action="api/posts" method="POST" enctype="multipart/form-data" >
+          <input id="image-id" type="file" name="post_image" />
       </div>
       <div class="mb-3">
           <label for="new-category"></label>

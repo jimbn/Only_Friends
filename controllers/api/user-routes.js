@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require('../../models');
-const upload = require('../../public/javascript/image-engine');
+const upload = require('./image-engine');
 
 // GET all Users
 router.get('/', (req, res) => {
@@ -160,14 +160,16 @@ router.post('/login', (req, res) => {
             return;
         }
 
-            req.session.save(() => {
-                req.session.user_id = userData.id,
-                req.session.username = userData.username;
-                req.session.loggedIn = true;
+        req.session.save(() => {
+            req.session.user_id = userData.id,
+            req.session.username = userData.username;
+            req.session.loggedIn = true;
 
-                res.json({ user: userData, message: `You are now logged in as ${userData.username}` })
-            });
+            res.json({ user: userData, message: `You are now logged in as ${userData.username}` })
+            console.log(req.session)
         });
+        
+    });
 });
 
 // USER logout route

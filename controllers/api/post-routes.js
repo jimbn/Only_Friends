@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require('../../models');
-const upload = require('../../public/javascript/image-engine');
+const upload = require('./image-engine');
+const withAuth = require('../../public/javascript/utils/auth');
 
 // get all posts
 router.get('/', (req, res) => {
@@ -148,45 +149,40 @@ router.get('/category/:category_name', (req, res) => {
     });
 });
 
-
-
 // POST new POST w/ IMAGE optional; 
-router.post('/', upload.single('post_image') ,(req, res) => {
-
-    console.log(req.file)
-
-    Post.create({
-        title: req.body.title,
-        post_body: req.body.post_body,
-        category_name: req.body.category_name,
-        user_id: /*req.session.user_id*/ req.body.user_id,
-        image_path: req.file.path
-    })
-    .then(postData => res.json(postData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    })
+router.post('/',  withAuth, upload.single('post_image'), (req, res) => {
+    console.log("THIS IS IT!!!", req.file.path)
+    if (req.file) {
+        Post.create({
+            title: req.body.title,
+            post_body: req.body.post_body,
+            category_name: req.body.category_name,
+            user_id: req.session.user_id,
+            image_path: req.file.path
+        })
+        .then(postData => res.json(postData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
+      }  
+      else {
+        Post.create({
+            title: req.body.title,
+            post_body: req.body.post_body,
+            category_name: req.body.category_name,
+            user_id: req.session.user_id,
+        })
+        .then(postData => res.json(postData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
+      }
 });
 
-// POST a new post
-// router.post('/', (req, res) => {
-//     Post.create({
-//         title: req.body.title,
-//         post_body: req.body.post_body,
-//         category_name: req.body.category_name,
-//         user_id: /*req.session.user_id*/ req.body.user_id
-//     })
-//     .then(postData => res.json(postData))
-//     .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     })
-// });
-
-
 // PUT update a post title, post_body, or category_name 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth,(req, res) => {
     Post.update(
         {
             title: req.body.title,
@@ -213,7 +209,7 @@ router.put('/:id', (req, res) => {
 });
 
 // Delete a post 
-router.delete('/:id', (req, res) => {
+router.delete('/:id',withAuth, (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id
