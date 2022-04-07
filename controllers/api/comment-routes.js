@@ -57,23 +57,27 @@ router.get('/:id', (req, res) => {
     })
 });
 
+// we were working w/ Jaydon here vvvvvvvvvv
 
 // POST create a Comment
-router.post('/', withAuth, (req, res) => {
-    console.log(req.session)
-    Comment.create({
+router.post('/:id', withAuth, (req, res) => {
+    console.log("IN HERERERERERE!!!!!!!!!!!!!!!!!")
+    Comment.create(     
+        {
     // uncomment if statment and req.session.user_id [delete 'req.body.user_id'] once we are working it into the front end 
-    // if(req.session) {
             comment_text: req.body.comment_text,
             user_id: req.session.user_id,
-            post_id: req.body.post_id
+            post_id: req.params.id
         })
-        .then(commentData => res.json(commentData))
+        .then(commentData => {
+            
+           res.json(commentData);
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
-    //}
+
 });
 
 // PUT update comment text 
