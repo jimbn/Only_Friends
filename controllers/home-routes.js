@@ -47,7 +47,7 @@ router.get('/post/:id', (req, res) => {
                     'id',
                     'comment_text',
                     'user_id',
-                    'post_id'
+                    'post_id',
                 ],
                 include: {
                     model: User,

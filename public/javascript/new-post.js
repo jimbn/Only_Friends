@@ -29,10 +29,7 @@ async function newFormHandler(event) {
         title,
         post_body,
         category_name,
-<<<<<<< HEAD
         image_path
-=======
->>>>>>> 2b5bf7928bb3a1690db58e0da86d4bf00ca61308
       }),
       headers: {
         'Content-Type': 'application/json'
