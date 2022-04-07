@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require('../../models');
-
+const withAuth = require('../../public/javascript/utils/auth');
 
 // GET all comments 
 router.get('/', (req, res) => {
@@ -59,12 +59,13 @@ router.get('/:id', (req, res) => {
 
 
 // POST create a Comment
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
+    console.log(req.session)
     Comment.create({
     // uncomment if statment and req.session.user_id [delete 'req.body.user_id'] once we are working it into the front end 
     // if(req.session) {
             comment_text: req.body.comment_text,
-            user_id: req.body.user_id /* req.session.user_id*/,
+            user_id: req.session.user_id,
             post_id: req.body.post_id
         })
         .then(commentData => res.json(commentData))

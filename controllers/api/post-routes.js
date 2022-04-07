@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require('../../models');
-const upload = require('../../public/javascript/image-engine');
+const upload = require('./image-engine');
 const withAuth = require('../../public/javascript/utils/auth');
 
 // get all posts
@@ -151,7 +151,7 @@ router.get('/category/:category_name', (req, res) => {
 
 // POST new POST w/ IMAGE optional; 
 router.post('/',  withAuth, upload.single('post_image'), (req, res) => {
-    console.log("THIS IS IT!!!", req.file)
+    console.log("THIS IS IT!!!", req.file.path)
     if (req.file) {
         Post.create({
             title: req.body.title,
