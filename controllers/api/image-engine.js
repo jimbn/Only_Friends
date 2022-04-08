@@ -17,10 +17,12 @@ const fileFilter = (req, file, cb) => {
         // accept the image file
         cb(null, true);
     }
+
     else {
         cb(new Error('Filetype not accepted!'), false)
     }
 };
+
 
 const upload = multer({ 
     storage: imageStorageEngine, 
@@ -28,7 +30,7 @@ const upload = multer({
         // maximum image size of 5MB
         fieldSize: 1024 * 1024 * 5
     },
-    fileFilter: fileFilter,
+    fileFilter: fileFilter
 });
 
 module.exports = upload;
