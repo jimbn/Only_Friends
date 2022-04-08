@@ -24,8 +24,9 @@ router.get('/',(req, res) => {
 });
 
 // GET 1 post by id 
+// changed findAll to findOne 
 router.get('/:id', (req, res) => {
-    Comment.findAll({
+    Comment.findOne({
         where: {
             id: req.params.id
         },
@@ -67,7 +68,8 @@ router.post('/:id', withAuth, (req, res) => {
     // uncomment if statment and req.session.user_id [delete 'req.body.user_id'] once we are working it into the front end 
             comment_text: req.body.comment_text,
             user_id: req.session.user_id,
-            post_id: req.params.id
+            post_id: req.params.id,
+            
         })
         .then(commentData => {
             

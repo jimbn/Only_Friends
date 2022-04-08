@@ -37,7 +37,8 @@ router.get('/post/:id', (req, res) => {
             'id',
             'title',
             'post_body',
-            'created_at'
+            'created_at',
+            'image_path'
 
         ],
         include: [
@@ -48,6 +49,7 @@ router.get('/post/:id', (req, res) => {
                     'comment_text',
                     'user_id',
                     'post_id',
+                    'created_at'
                 ],
                 include: {
                     model: User,
@@ -94,7 +96,8 @@ router.get('/post/category/:category_name', (req, res) => {
             'title',
             'post_body',
             'category_name',
-            'created_at'
+            'created_at',
+            'image_path'
         ],
         order: [['created_at', 'DESC']],
         include: [
