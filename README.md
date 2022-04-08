@@ -61,5 +61,5 @@
 
   ## Questions
   🤔❓❓
-  Any questions please reach out to any of us at our Github accounts [Samm](https://github.com/sammcowen ), [Ulises](https://github.com/UlisesRosas) , [michael](https://github.com/MCORTEZM1) , or [Jim](https://github.com/jimbn)
+  Any questions please reach out to any of us at our Github accounts [Samm](https://github.com/sammcowen ), [Ulises](https://github.com/UlisesRosas) , [Michael](https://github.com/MCORTEZM1) , or [Jim](https://github.com/jimbn)
   
