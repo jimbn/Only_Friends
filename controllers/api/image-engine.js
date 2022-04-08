@@ -3,7 +3,7 @@ const multer = require('multer');
 const imageStorageEngine = multer.diskStorage({
     destination: (req, file, cb) => {
   
-      cb(null, 'public/images');
+      cb(null, './public/images');
     },
     filename: (req, file, cb) => {
       
@@ -28,7 +28,7 @@ const upload = multer({
         // maximum image size of 5MB
         fieldSize: 1024 * 1024 * 5
     },
-    fileFilter: fileFilter
+    fileFilter: fileFilter,
 });
 
 module.exports = upload;

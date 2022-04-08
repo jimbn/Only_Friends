@@ -15,30 +15,32 @@ closePostModal.addEventListener("click", function() {
     body.style.overflow="visible";
 });
 
+
+
 async function newFormHandler(event) {
     event.preventDefault();
   
     const title = document.querySelector('#new-title').value;
     const post_body = document.querySelector('#new-body').value;
     const category_name = document.querySelector('#new-category').value;
-    let imageUrl = document.querySelector('#post-image').value.split('\\');
-    let image_path = `\public\\images\\` + imageUrl[imageUrl.length -1];
-    console.log(imageUrl);
-  
-
-    const response = await fetch(`/api/posts`, {
-      method: 'POST',
+    // let imageUrl = document.querySelector('#post-image').value.split('\\');
+    // let image_path = `\\public\\images\\` + imageUrl[imageUrl.length -1];
+    // console.log(imageUrl);
+    
+    const response = await fetch("/api/posts",  {
+      method: 'post',
       body: JSON.stringify({
         title,
         post_body,
-        category_name,
-        image_path
+        category_name
       }),
       headers: {
         'Content-Type': 'application/json'
       }
     });
-  
+
+    console.log(response)
+
     if (response.ok) {
       document.location.replace('/');
     } else {
@@ -46,4 +48,4 @@ async function newFormHandler(event) {
     }
 }
   
-document.querySelector('#submit-post').addEventListener('click', newFormHandler);
+document.querySelector('#imageBtn').addEventListener('click', newFormHandler);

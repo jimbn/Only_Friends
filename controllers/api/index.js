@@ -4,12 +4,10 @@ const userRoutes = require('./user-routes');
 const postRoutes = require('./post-routes');
 const commentRoutes = require('./comment-routes');
 const channelRoutes = require('./channel-routes');
-const imageRoutes = require('./image-routes');
 
 router.use('/users', userRoutes);
 router.use('/posts', postRoutes);
 router.use('/comments', commentRoutes);
 router.use('/channels', channelRoutes);
-router.use('/images', imageRoutes);
 
 module.exports = router;
