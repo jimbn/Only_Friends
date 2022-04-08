@@ -150,22 +150,23 @@ router.get('/category/:category_name', (req, res) => {
 });
 
 // POST new POST w/ IMAGE optional; 
-router.post('/',  withAuth, upload.single('post_image'), (req, res) => {
-    console.log("THIS IS IT!!!", req.body.image_path)
-    // if (req.file) {
+router.post('/',  upload.single("image"), withAuth,  (req, res) => {
+    console.log("THIS IS IT!!!====================", req.file)
+    const path = req.file.path
+    //  if (req.file) {
          Post.create({
             title: req.body.title,
             post_body: req.body.post_body,
             category_name: req.body.category_name,
             user_id: req.session.user_id,
-            image_path: req.body.image_path
+            image_path: path
          })
         .then(postData => res.json(postData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         })
-    // //   }  
+    // }  
     //   else {
     //     Post.create({
     //         title: req.body.title,
