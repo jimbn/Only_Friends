@@ -27,6 +27,8 @@ router.get('/',(req, res) => {
 
 });
 
+
+
 // find one post , when user clicks on a single post *
 router.get('/post/:id', (req, res) => {
     Post.findOne({
@@ -39,7 +41,6 @@ router.get('/post/:id', (req, res) => {
             'post_body',
             'created_at',
             'image_path'
-
         ],
         include: [
             {

@@ -8,7 +8,9 @@
         {{#if loggedIn}}
           <button class="col-1 userBtn" id="logout">Logout</button>
           <button class="col-1 userBtn" id="new-post">Create Post</button>
+          <button class="col-1 userBtn" id="update-pic">Update profile image</button>
           {{> new-post}}
+          {{> update-profile-picture}}
         {{else}}
           <button class="col-1 userBtn" id="open-login-modal">Log In</button>
           <button class="col-1 userBtn" id="open-signup-modal">Sign Up</button>
