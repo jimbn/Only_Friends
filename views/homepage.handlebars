@@ -3,9 +3,16 @@
 {{!-- Section for listing channels --}}
 <section class="channel container">
     <h2>Friends</h2>
-    {{#each users as |user|}}
-     {{> featured-user user}}
-    {{/each}}
+    {{#if loggedIn}}
+        {{#each users as |user|}}
+        {{> featured-user user}}
+        {{/each}}
+    {{else}}
+        {{#each users as |user|}}
+        {{> featured-user}}
+        {{/each}}
+    {{/if}}
+
        
 </section>
 

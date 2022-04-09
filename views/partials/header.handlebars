@@ -1,23 +1,32 @@
   <header class=" position-sticky top-0">
     <h1 class="header-title"> <a href="/">Only_Friends</a> </h1>
-    <div class="container dash">
-      <div class="row">
-        <input id="search-bar" class="col-3" type="text"/>
-        <button id="user-search-bar" class="col-3">Search</button>
-      
+    <div class="dash">
+      <div class="dropdown row">
         {{#if loggedIn}}
-          <button class="col-1 userBtn" id="logout">Logout</button>
-          <button class="col-1 userBtn" id="new-post">Create Post</button>
-          <button class="col-1 userBtn" id="update-pic">Update profile image</button>
-          {{> new-post}}
-          {{> update-profile-picture}}
+        <span class = "">{{loggedUsername}}</span>
         {{else}}
-          <button class="col-1 userBtn" id="open-login-modal">Log In</button>
-          <button class="col-1 userBtn" id="open-signup-modal">Sign Up</button>
-          {{!-- Modals for login/signup --}}
-          {{> login-modal}}
-          {{> signup-modal}}
+        <span class="">O_F</span>
         {{/if}}
+        <div class="dropdown-content row">
+          <div>
+            <input id="search-bar" class="" type="text" placeholder="Friend's Username"/>
+            <button id="user-search-bar" class="">Search</button>
+          </div>
+        
+          {{#if loggedIn}}
+            <button class=" userBtn" id="update-pic">Update profile image</button>
+            <button class=" userBtn" id="new-post">Create Post</button>
+            <button class=" userBtn" id="logout">Logout</button>
+            {{> new-post}}
+            {{> update-profile-picture}}
+          {{else}}
+            <button class=" userBtn" id="open-login-modal">Log In</button>
+            <button class=" userBtn" id="open-signup-modal">Sign Up</button>
+            {{!-- Modals for login/signup --}}
+            {{> login-modal}}
+            {{> signup-modal}}
+          {{/if}}
+        </div>
       </div>
     </div>
   </header>

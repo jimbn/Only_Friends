@@ -15,10 +15,12 @@ closePostModal.addEventListener("click", function() {
     body.style.overflow="visible";
 });
 
-function submitHandler(event){
-  document.querySelector('')
-}
+document.querySelector('#post_body').addEventListener('input', autoResize, false);
 
+function autoResize() {
+  this.style.height = 'auto';
+  this.style.height = this.scrollHeight + 'px';
+};
 
 async function newFormHandler(event) {
     event.preventDefault();

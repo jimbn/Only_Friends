@@ -19,12 +19,13 @@ router.get('/',(req, res) => {
     })
     .then(userData => {
         const users = userData.map(user => user.get({ plain: true }));
-
+    
 
         res.render('homepage',{
             users,
             loggedIn: req.session.loggedIn,
-            loggedID: req.session.user_id
+            loggedID: req.session.user_id,
+            loggedUsername: req.session.username
         });
     })
 
@@ -77,7 +78,8 @@ router.get('/post/:id', (req, res) => {
             // pass data to template 
             res.render('single-post', {
                 post,
-                loggedIn:req.session.loggedIn
+                loggedIn:req.session.loggedIn,
+                loggedUsername: req.session.username
             });
         })
         .catch(err => {
@@ -139,7 +141,8 @@ router.get('/post/category/:category_name', (req, res) => {
             res.render('posts-by-category', {
                 posts,
                 category_name: posts[0].category_name,
-                loggedIn:req.session.loggedIn
+                loggedIn:req.session.loggedIn,
+                loggedUsername: req.session.username
             });
         })
         .catch(err => {
@@ -197,7 +200,8 @@ router.get('/post/user/page/:username', (req, res) => {
                     res.render('posts-by-user', {
                         user,
                         posts,
-                        loggedIn:req.session.loggedIn
+                        loggedIn:req.session.loggedIn,
+                        loggedUsername: req.session.username
                     })
                 });
         })
