@@ -26,6 +26,7 @@ app.use(session(sess));
 
 // const helpers = require('./utils/helpers');
 
+
 const hbs = exphbs.create({ });
 
 
@@ -39,6 +40,7 @@ app.use( /*'public',*/ express.static(path.join(__dirname, 'public')));
 // engine must be set up after app intialization above 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
 
 // initiate routes 
 app.use(routes);

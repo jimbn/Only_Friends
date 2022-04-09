@@ -1,13 +1,12 @@
 {{#if title}}
 
 
-<article class="post">
-    <div class="card">
+<article class="post container">
+    <a href="/post/{{id}}">
+        <div class="card">
         <h5 class="card-header">{{user.username}}</h5>
         <div class="card-body">
             <h5 class="card-title">{{title}}</h5>
-        <img src="localhost:3001/{{image_path}}" alt="yeet">
-
             <p class="card-text">
                 {{post_body}}
             </p>
@@ -16,9 +15,10 @@
             <small class="text-muted">posted by {{user.username}} on
                 {{created_at}}
                 |
-                <a href="/post/{{id}}">{{comments.length}} comment(s)</a></small>
+                <div>{{comments.length}} comment(s)</div></small>
         </div>
     </div>
+    </a>
 
 </article>
 {{/if}}

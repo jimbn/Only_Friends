@@ -3,21 +3,17 @@
         <h5 class="card-header">{{user.username}}</h5>
         <div class="card-body">
             <h5 class="card-title">{{title}}</h5>
-
-
             <p class="card-text">
                 {{post_body}}
             </p>
-            <img src="http://localhost:3001/{{image_path}}" alt="this doesnt matter ">
+            {{#if image_path}}
+                <img src="{{image_path}}" alt="{{title}}'s post image">
+            {{/if}}
         </div>
-
-
 
         <div class="card-footer">
             <small class="text-muted">posted by {{user.username}} on
                 {{created_at}}
-
-                {{!-- <a href="/post/{{id}}">{{comments.length}} comment(s)</a></small> --}}
         </div>
     </div>
    
