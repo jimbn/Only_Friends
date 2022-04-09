@@ -2,8 +2,6 @@
     <h1>Posts From Friends About {{category_name}}</h1>
     {{#each posts as |post|}}
        {{> categories-post-list post }}
-    {{else}} 
-        <h1>There is no post for this category.</h1>
     {{/each}}
 
 {{!-- create partial for the post articles/cards lines 4 -18 so that it can be consistent thru out the site
