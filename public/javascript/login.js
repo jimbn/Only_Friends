@@ -33,7 +33,5 @@ async function loginHandler(event) {
 }
 
 
-
-
 // listening for log in button click
 document.querySelector('#login-btn').addEventListener('click', loginHandler);
