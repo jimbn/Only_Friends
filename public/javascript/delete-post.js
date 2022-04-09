@@ -3,11 +3,13 @@
 async function deletePost(event){
     event.preventDefault();
 // gets id from window url 
-const postWindowId = (window.location).href;
-// turns the url string in to an array 
-const urlArray = postWindowId.split('/');
-// gets the last item in the array which is the post id
-const id = urlArray[urlArray.length - 1];
+// const postWindowId = (window.location).href;
+// // turns the url string in to an array 
+// const urlArray = postWindowId.split('/');
+// // gets the last item in the array which is the post id
+// const id = urlArray[urlArray.length - 1];
+// console.log(id);
+const id = document.getElementById('card-text').getAttribute('data-id');
 console.log(id);
   
 if(id){
@@ -30,4 +32,4 @@ if(id){
 
 // listening for delete button click
 // ****to do put the id in the correct handlebars but gets the id from the page the single comment is at
-document.querySelector('#delete-button').on('click', deletePost )
+document.querySelector('#delete-button').addEventListener('click', deletePost )

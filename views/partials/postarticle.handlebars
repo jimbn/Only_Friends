@@ -4,7 +4,7 @@
 <article class="post">
     <div class="card">
         <h5 class="card-header">{{user.username}}</h5>
-        <div class="card-body">
+        <div id="card-text" class="card-body" data-id="{{id}}">
             <h5 class="card-title">{{title}}</h5>
         <img src="localhost:3001/{{image_path}}" alt="yeet">
 
@@ -18,7 +18,9 @@
                 |
                 <a href="/post/{{id}}">{{comments.length}} comment(s)</a></small>
         </div>
+         <button id="delete-button">Delete</button>
     </div>
 
 </article>
+<script src="/javascript/delete-post.js"></script>
 {{/if}}
