@@ -21,14 +21,14 @@ const sess = {
     db: sequelize
   })
 };
-// const helpers = require('./utils/helpers');
+const helpers = require('/javascript/utils/helpers');
 
 app.use(session(sess));
 
 
 
 
-const hbs = exphbs.create({});
+const hbs = exphbs.create({helpers});
 
 
 
