@@ -202,6 +202,9 @@ router.get('/post/user/page/:username', (req, res) => {
         });
 
 });
-
+// adding route for link in footer to display the about team page
+router.get('/contributions', (req,res) => {
+    res.render('teampage');
+});
 
 module.exports = router;
