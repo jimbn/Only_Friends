@@ -97,6 +97,7 @@ router.put('/:id', withAuth, upload.single('image'), (req, res) => {
     const imgPath = req.file.path.split('\\');
     const newImgPath = "/" + imgPath[imgPath.length - 2] + "/" + imgPath[imgPath.length - 1];
     console.log('++++++++++++++++++++++==========================', req.file.path);
+    console.log(newImgPath);
     User.update(
         {
             username: req.body.username,
@@ -115,6 +116,7 @@ router.put('/:id', withAuth, upload.single('image'), (req, res) => {
                 res.status(404).json({ message: 'No user found with this id' });
                 return;
             }
+            // why does the user data have an array of length 2
             res.json(userData)
         })
         .catch(err => {
