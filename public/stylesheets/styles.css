@@ -149,6 +149,13 @@ ul {
     box-shadow: 0 0 15px yellow;
 }
 
+.cat-img img {
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    height: 100px
+}
+
 .carousel-item img {
     max-width: fit-content;
     height: 500px;
