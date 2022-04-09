@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/stylesheets/modal.css">
     <link rel="stylesheet" href="/stylesheets/carousel.css">
     <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 
 <body>
@@ -24,15 +26,18 @@
 
   {{!-- Footer **Will add our contact: thinking of just putting contributers on seperate page and hard code that in the server -Jim **--}}
   <footer>
-
+    &copy;2022 
+    <a href="/contributions">Team Name</a>
   </footer>
 
   {{!-- script tag for logout functionality  --}}
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/javascript/searchbar.js"></script>
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   <script src="/javascript/new-post.js"></script>
-  <script src="/javascript/searchbar.js"></script>
+  <script src="/javascript/update-profile-picture.js"></script>
+  
   {{!-- <script src="../../controllers/api/image-engine.js"></script> --}}
   {{else}}
   <script src="/javascript/login.js"></script>

@@ -13,19 +13,25 @@ router.get('/',(req, res) => {
     // this needs to be determined 
     User.findAll({
         attributes:[
-            'username'
+            'username',
+            'user_image_path'
         ]
     })
     .then(userData => {
         const users = userData.map(user => user.get({ plain: true }));
-
+    
 
         res.render('homepage',{
             users,
-            loggedIn: req.session.loggedIn});
+            loggedIn: req.session.loggedIn,
+            loggedID: req.session.user_id,
+            loggedUsername: req.session.username
+        });
     })
 
 });
+
+
 
 // find one post , when user clicks on a single post *
 router.get('/post/:id', (req, res) => {
@@ -52,12 +58,12 @@ router.get('/post/:id', (req, res) => {
                 ],
                 include: {
                     model: User,
-                    attributes: ['username']
+                    attributes: ['username', 'user_image_path']
                 }
             },
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'user_image_path']
 
             }]
     })
@@ -72,7 +78,8 @@ router.get('/post/:id', (req, res) => {
             // pass data to template 
             res.render('single-post', {
                 post,
-                loggedIn:req.session.loggedIn
+                loggedIn:req.session.loggedIn,
+                loggedUsername: req.session.username
             });
         })
         .catch(err => {
@@ -112,13 +119,13 @@ router.get('/post/category/:category_name', (req, res) => {
                 include: {
                     // username of commenter
                     model: User,
-                    attributes: ['username']
+                    attributes: ['username', 'user_image_path']
                 }
             },
             {
                 // owner of post
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'user_image_path']
             }
         ]
     })
@@ -134,7 +141,8 @@ router.get('/post/category/:category_name', (req, res) => {
             res.render('posts-by-category', {
                 posts,
                 category_name: posts[0].category_name,
-                loggedIn:req.session.loggedIn
+                loggedIn:req.session.loggedIn,
+                loggedUsername: req.session.username
             });
         })
         .catch(err => {
@@ -149,7 +157,7 @@ router.get('/post/user/page/:username', (req, res) => {
         where: {
             username: req.params.username
         },
-        attributes: ['username', 'id'],
+        attributes: ['username', 'id', 'user_image_path'],
         includes: [
             {
                 model: Post,
@@ -192,7 +200,8 @@ router.get('/post/user/page/:username', (req, res) => {
                     res.render('posts-by-user', {
                         user,
                         posts,
-                        loggedIn:req.session.loggedIn
+                        loggedIn:req.session.loggedIn,
+                        loggedUsername: req.session.username
                     })
                 });
         })
@@ -202,6 +211,9 @@ router.get('/post/user/page/:username', (req, res) => {
         });
 
 });
-
+// adding route for link in footer to display the about team page
+router.get('/contributions', (req,res) => {
+    res.render('teampage');
+});
 
 module.exports = router;

@@ -1,28 +1,23 @@
-{{!-- HERO: Featured: Post --}}
-<section class="hero container">
-    {{#each posts as |post|}}
-      {{> hero-carousel post }}
-    {{/each}}
-</section>
 
 
 {{!-- Section for listing channels --}}
 <section class="channel container">
     <h2>Friends</h2>
-{{!-- <ul class="channels row">
-    {{#each channels}}
-    <li> --}}
-    {{#each users as |user|}}
-     {{> featured-user user}}
-    {{/each}}
+    {{#if loggedIn}}
+        {{#each users as |user|}}
+        {{> featured-user user}}
+        {{/each}}
+    {{else}}
+        {{#each users as |user|}}
+        {{> featured-user}}
+        {{/each}}
+    {{/if}}
+
        
-    {{!-- </li>
-    {{/each}}
-</ol> --}}
 </section>
 
 {{!-- Section for categories --}}
 {{> categories-list}}
 
 
-<script src="public/javascript/utils/carousel.js"></script>
+<script src="/javascript/utils/carousel.js"></script>
