@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require('../../models');
-const upload = require('./image-engine');
+const upload = require('../../public/javascript/utils/image-engine');
 
 // GET all Users
 router.get('/', (req, res) => {

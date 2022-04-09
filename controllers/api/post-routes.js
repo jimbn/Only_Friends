@@ -150,9 +150,10 @@ router.get('/category/:category_name', (req, res) => {
 });
 
 // POST new POST w/ IMAGE optional; 
-router.post('/',  upload.single("image"), withAuth,  (req, res) => {
-    console.log("THIS IS IT!!!====================", req.file)
-    const path = req.file.path
+router.post('/',  upload.single("file"), withAuth,  (req, res) => {
+    console.log("THIS IS IT!!!====================", req.file);
+    const path = req.file.path;
+   
     //  if (req.file) {
          Post.create({
             title: req.body.title,
