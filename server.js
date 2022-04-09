@@ -21,7 +21,7 @@ const sess = {
     db: sequelize
   })
 };
-const helpers = require('/javascript/utils/helpers');
+const helpers = require('./public/javascript/utils/helpers');
 
 app.use(session(sess));
 
