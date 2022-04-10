@@ -166,7 +166,14 @@ router.post('/',  withAuth, upload.single("image"),  (req, res) => {
             user_id: req.session.user_id,
             image_path: newPostPath
         })
-        .then(postData => res.redirect(`/post/${postData.dataValues.id}`))
+        .then(postData => {
+            if(postData){
+                res.redirect(`/post/${postData.dataValues.id}`)
+            }
+            else {
+                window.location.reload();
+            }
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -179,7 +186,15 @@ router.post('/',  withAuth, upload.single("image"),  (req, res) => {
             category_name: req.body.category_name,
             user_id: req.session.user_id,
         })
-        .then(postData =>  res.redirect(`/post/${postData.dataValues.id}`))
+        .then(postData =>  {
+            console.log(postData.dataValues.post_body)
+            if(postData){
+                res.redirect(`/post/${postData.dataValues.id}`)
+            }
+            else {
+                window.location.reload();
+            }
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
