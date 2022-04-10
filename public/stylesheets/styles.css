@@ -32,7 +32,9 @@ header {
     border-bottom: 8px double var(--accent-color);
     z-index: 990;
 }
-
+.hide {
+    display: none;
+}
 .header-title {
     text-align: center;
 }
