@@ -2,11 +2,16 @@
 
 {{!-- Section for listing channels --}}
 <section class="channel container">
-    <h2>Friends</h2>
+    <h2>Friends {{loggedUsername}}</h2>
     {{#if loggedIn}}
+    <div class="featured-user">
+    
+        {{loggedUsername}}
         {{#each users as |user|}}
-        {{> featured-user user}}
+        {{{loggedUsername}}}
+                <a href="/post/user/page/{{username}}"> {{username}} </a> 
         {{/each}}
+    </div>
     {{else}}
         {{#each users as |user|}}
         {{> featured-user}}
