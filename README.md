@@ -28,7 +28,7 @@
   ## Description
   ℹ
 
-  only_friends is an application built to allow users to post about their interests, comment on other posts and find other friends online who have similar interests or can teach them abouta topic they've been wanting to learn more on. 
+  only_friends is an application built to allow users to post about their interests, comment on other posts and find other friends online who have similar interests! Users can also learn more about a topic they're intrigued about, by browsing the different categories Friends post about on the website.
   
   ## Demo
   📽
@@ -39,13 +39,20 @@
   💻
   Follow these steps to properly install this application:
 
-  clone the repo from github run npm i to install all dependencies from package.json file . etc etc to be edited later.
+  1. Clone the repo from github
+  2. Run command 'npm i' to install all dependencies from the package.json file.
+  3. Open mysql shell in terminal(mysql -u root -p) and input your password for mysql.
+  4. Run command source db/schema.sql;
+  5. Use only_friends_db;
+  6. Run command 'npm run seed' in terminal.
+  7. Run node server.js or nodemon server.js 
+  8. Open web browser and enter our heroku live url in the url bar.
 
   ## Usage 
   🔎
   Instructions for use:
 
-  to be edited
+  to be edited upon finish
 
   ## Contributions
   💁🏽‍♂️
@@ -57,7 +64,7 @@
   🧪
   Instructions for testing this application:
 
-  project can be tested with user input 
+  This projects' functionality  can be tested with user input.
 
   ## Questions
   🤔❓❓
