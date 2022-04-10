@@ -116,7 +116,7 @@ router.put('/:id', withAuth, upload.single('image'), (req, res) => {
                 res.status(404).json({ message: 'No user found with this id' });
                 return;
             }
-            // why does the user data have an array of length 2
+            // NOTE why does the user data have an array of length 2
             res.json(userData)
         })
         .catch(err => {

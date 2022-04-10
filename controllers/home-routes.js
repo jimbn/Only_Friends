@@ -11,25 +11,52 @@ router.get('/',(req, res) => {
 // check if the user is logged in then render the homepage 
     // idk what to put here i was going to put channel but theres no channel_name, 
     // this needs to be determined 
+    console.log(req.session.user_id);
     User.findAll({
         attributes:[
             'username',
             'user_image_path'
+        ],
+        include: [
+            {
+                model: Post, 
+                attributes: ['id', 'title', 'user_id'] 
+            }
         ]
     })
     .then(userData => {
         const users = userData.map(user => user.get({ plain: true }));
-    
+        Post.findAll({
+            where: {
+                user_id: req.session.user_id
+            },
+            
+            attributes:['id','title','user_id'],
+            include: {
+                model: User
+            }
+        })
+        
+        // this was addad to get posts in to users-display-post.handlebars
+        .then(postData => {
+            if (!postData) {
+                res.status(404).json({ message: 'this friend hasnt posted anything yet!' });
+                return;
+            }
+            const posts = postData.map(post => post.get({ plain: true }));
+            res.render('homepage',{
+                users,
+                posts,
+                loggedIn: req.session.loggedIn,
+                loggedID: req.session.user_id,
+                loggedUsername: req.session.username
+            });
 
-        res.render('homepage',{
-            users,
-            loggedIn: req.session.loggedIn,
-            loggedID: req.session.user_id,
-            loggedUsername: req.session.username
-        });
+        })
     })
 
 });
+
 
 
 

@@ -292,6 +292,10 @@ footer a:hover {
     justify-content: space-evenly;
 }
 
+.comment-border {
+    text-decoration:underline;
+}
+
 /* @media only screen and (max-width:768px) {
     .container6 {
         display: flex;
