@@ -1,23 +1,17 @@
   <header class="position-sticky">
-    <h1 class="header-title"> <a href="/">Only_Friends</a> </h1>
-    <div class="dash">
-      <div class="dropdown row">
-        {{#if loggedIn}}
-        <span class = "">{{loggedUsername}}</span>
-        {{else}}
-        <span class="">O_F</span>
-        {{/if}}
-        <div class="dropdown-content row">
-          <div>
+    <h1 class="header-title"> Only_Friends</h1>
+    <div class="dash header-flex">
+          <div class="header-left">
             <input id="search-bar" class="" type="text" placeholder="Friend's Username"/>
             <button id="user-search-bar" class="userBtn">Search</button>
           </div>
         
-          {{#if loggedIn}}
+          <div class="header-right">
+            <div class="userBtn"><a href="/">Home</a> </div>
+            {{#if loggedIn}}
             <button class=" userBtn" id="update-pic">Update profile image</button>
-            <button class=" userBtn" id="new-post">Create Post</button>
             <button class=" userBtn" id="logout">Logout</button>
-            {{> new-post}}
+            
             {{> update-profile-picture}}
           {{else}}
             <button class=" userBtn" id="open-login-modal">Log In</button>
@@ -26,7 +20,6 @@
             {{> login-modal}}
             {{> signup-modal}}
           {{/if}}
-        </div>
-      </div>
+          </div>
     </div>
   </header>

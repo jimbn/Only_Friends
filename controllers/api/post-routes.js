@@ -152,12 +152,13 @@ router.get('/category/:category_name', (req, res) => {
 
 // POST new POST w/ IMAGE optional; 
 router.post('/',  withAuth, upload.single("image"),  (req, res) => {
-    console.log("THIS IS IT!!!====================", req.file.path)
-    const postPath = req.file.path.split('\\');
-    const newPostPath = "/" + postPath[postPath.length - 2] + "/" + postPath[postPath.length - 1];
+    console.log("THIS IS IT!!!====================", req.file)
 
-    console.log(newPostPath)
-    //   if (req.file) {
+    if (req.file) {
+        const postPath = req.file.path.split('\\');
+        const newPostPath = "/" + postPath[postPath.length - 2] + "/" + postPath[postPath.length - 1];
+        console.log(newPostPath)
+
         Post.create({
             title: req.body.title,
             post_body: req.body.post_body,
@@ -165,25 +166,40 @@ router.post('/',  withAuth, upload.single("image"),  (req, res) => {
             user_id: req.session.user_id,
             image_path: newPostPath
         })
-        .then(postData => res.json(postData))
+        .then(postData => {
+            if(postData){
+                res.redirect(`/post/${postData.dataValues.id}`)
+            }
+            else {
+                window.location.reload();
+            }
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         })
-    // }  
-    //   else {
-    //     Post.create({
-    //         title: req.body.title,
-    //         post_body: req.body.post_body,
-    //         category_name: req.body.category_name,
-    //         user_id: req.session.user_id,
-    //     })
-    //     .then(postData => res.json(postData))
-    //     .catch(err => {
-    //         console.log(err);
-    //         res.status(500).json(err);
-    //     })
-    //   }
+    }  
+    else {
+        Post.create({
+            title: req.body.title,
+            post_body: req.body.post_body,
+            category_name: req.body.category_name,
+            user_id: req.session.user_id,
+        })
+        .then(postData =>  {
+            console.log(postData.dataValues.post_body)
+            if(postData){
+                res.redirect(`/post/${postData.dataValues.id}`)
+            }
+            else {
+                window.location.reload();
+            }
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
+    }
 });
 
 // PUT update a post title, post_body, or category_name 
