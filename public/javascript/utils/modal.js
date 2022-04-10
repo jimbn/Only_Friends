@@ -1,10 +1,10 @@
 const loginBtn = document.querySelector("#open-login-modal");
 const loginModal = document.querySelector("#loginModal");
-const closeLoginModal = document.querySelector("#login-btn");
+const closeLoginModal = document.querySelector("#close-login-btn");
 
 const signupBtn = document.querySelector("#open-signup-modal");
 const signupModal = document.querySelector("#signupModal");
-const closeSignupModal = document.querySelector("#signup-btn");
+const closeSignupModal = document.querySelector("#close-signup-btn");
 
 const body = document.querySelector("body");
 
