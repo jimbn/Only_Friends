@@ -21,7 +21,7 @@
     <div>
         <ol>
             {{#each posts as |post|}}
-            {{> users-display-post posts}}
+            {{> users-display-post post}}
             {{/each}}
         </ol>
     </div>
@@ -33,4 +33,4 @@
 {{!-- make delete functionality go here as well --}}
 
 <script src="/javascript/utils/carousel.js"></script>
-{{!-- <script src="/javascript/delete-post.js"></script> --}}
+ <script src="/javascript/delete-post.js"></script>
