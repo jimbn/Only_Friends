@@ -8,7 +8,6 @@ async function deletePost(event){
 // const urlArray = postWindowId.split('/');
 // // gets the last item in the array which is the post id
 // const id = urlArray[urlArray.length - 1];
-// console.log(id);
 const id = document.getElementById('card-text').getAttribute('data-id');
 console.log(id);
   
