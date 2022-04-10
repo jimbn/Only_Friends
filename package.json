@@ -1,7 +1,7 @@
 {
   "name": "only_friends",
   "version": "1.0.0",
-  "enginges": {
+  "engines": {
     "node": "16.14.0"
   },
   "description": "",
