@@ -117,8 +117,6 @@ router.get('/post/:id', (req, res) => {
 router.get('/post/category/:category_name', (req, res) => {
     console.log('category_name: ', typeof req.params.category_name, req.params.category_name)
     Post.findAll({
-
-
         where: {
             category_name: req.params.category_name
         },
