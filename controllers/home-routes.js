@@ -24,19 +24,17 @@ router.get('/',(req, res) => {
             }
         ]
     })
-    // .then(userData => {
-        
-    //     const users = userData.map(user => user.get({ plain: true }));
-    //     Post.findAll({
-    //         where: {
-    //             user_id: req.session.user_id
-    //         },
-            
-    //         attributes:['id','title','user_id'],
-    //         include: {
-    //             model: User
-    //         }
-    //     })
+    .then(userData => {
+        const users = userData.map(user => user.get({ plain: true }));
+        Post.findAll({
+            // where: {
+            //     user_id: req.session.user_id
+            // },
+            attributes:['id','title','user_id'],
+            include: {
+                model: User
+            }
+        })
         
         // this was addad to get posts in to users-display-post.handlebars
         .then(postData => {
