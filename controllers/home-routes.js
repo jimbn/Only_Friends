@@ -24,18 +24,19 @@ router.get('/',(req, res) => {
             }
         ]
     })
-    .then(userData => {
-        const users = userData.map(user => user.get({ plain: true }));
-        Post.findAll({
-            where: {
-                user_id: req.session.user_id
-            },
+    // .then(userData => {
+        
+    //     const users = userData.map(user => user.get({ plain: true }));
+    //     Post.findAll({
+    //         where: {
+    //             user_id: req.session.user_id
+    //         },
             
-            attributes:['id','title','user_id'],
-            include: {
-                model: User
-            }
-        })
+    //         attributes:['id','title','user_id'],
+    //         include: {
+    //             model: User
+    //         }
+    //     })
         
         // this was addad to get posts in to users-display-post.handlebars
         .then(postData => {
@@ -45,7 +46,7 @@ router.get('/',(req, res) => {
             }
             const posts = postData.map(post => post.get({ plain: true }));
             res.render('homepage',{
-                users,
+                // users,
                 posts,
                 loggedIn: req.session.loggedIn,
                 loggedID: req.session.user_id,
@@ -53,7 +54,7 @@ router.get('/',(req, res) => {
             });
 
         })
-    })
+    // })
 
 });
 
