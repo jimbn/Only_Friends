@@ -28,7 +28,7 @@
   ## Description
   ℹ
 
-  only_friends is an application built to allow users to post about their interests, comment on other posts and find other friends online who have similar interests! Users can also learn more about a topic they're intrigued about, by browsing the different categories Friends post about on the website.
+  Only_Friends is an application built to allow users to post about their interests, comment on other posts and find other friends online who have similar interests! Users can also learn more about a topic they're intrigued about, by browsing the different categories Friends post about on the website.
   
   ## Demo
   📽
