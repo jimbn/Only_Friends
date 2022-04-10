@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require('../../models');
-const upload = require('./image-engine');
+const upload = require('./image-engine2');
 const withAuth = require('../../public/javascript/utils/auth');
 
 
