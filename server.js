@@ -7,7 +7,7 @@ const routes = require('./controllers');
 
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const port = process.env.PORT || 3001;
 
 const sequelize = require("./config/connection");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -43,5 +43,5 @@ app.use(routes);
 // syncing db to the server 
 // set force:false, when done with final version
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
+  app.listen(port, () => console.log(`Now listening on port ${port}`));
 });
