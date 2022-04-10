@@ -64,4 +64,7 @@ document.querySelector('#profile-image-btn').addEventListener('click', async fun
   const data = await response.json();
   console.log(data);
   console.log(data[1][0].user_image_path);
+  if (data.ok) {
+    document.location.reload();
+  }
 });

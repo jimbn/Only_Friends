@@ -27,9 +27,9 @@ router.get('/',(req, res) => {
     .then(userData => {
         const users = userData.map(user => user.get({ plain: true }));
         Post.findAll({
-            where: {
-                user_id: req.session.user_id
-            },
+            // where: {
+            //     user_id: req.session.user_id
+            // },
             
             attributes:['id','title','user_id'],
             include: {
@@ -212,10 +212,11 @@ router.get('/post/user/page/:username', (req, res) => {
                 where: {
                     user_id: user.id
                 },
-                includes: [{
-                    model: User,
-
-                }]
+                includes: [
+                    {
+                    model:Comment,
+                    }
+                ]
             })
                 .then(postData => {
                     if (!postData) {
