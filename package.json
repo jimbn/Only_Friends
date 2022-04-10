@@ -1,6 +1,9 @@
 {
   "name": "only_friends",
   "version": "1.0.0",
+  "enginges": {
+    "node": "16.14.0"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {
