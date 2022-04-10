@@ -58,7 +58,8 @@
   💁🏽‍♂️
   If you would like to contribute to this project, please follow these guidelines: 
 
-  n/a
+  Please feel free to reach out to any of the team at our github accounts in the [Questions section](#Questions) below.
+  Click any team members name and we are more than happy to take any positive feedback or suggestions into possible development!
 
   ## Tests 
   🧪
