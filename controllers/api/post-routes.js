@@ -152,12 +152,18 @@ router.get('/category/:category_name', (req, res) => {
 
 // POST new POST w/ IMAGE optional; 
 router.post('/',  withAuth, upload.single("image"),  (req, res) => {
-    console.log("THIS IS IT!!!====================", req.file)
-
-    if (req.file) {
+    // console.log("THIS IS IT!!!====================", req.file)
+    if (req.file) {   
+        if(process.env.JAWSDB_URL) {
+            const postPath = req.file.path.split('/');
+            const newPostPath = "/" + postPath[postPath.length - 2] + "/" + postPath[postPath.length - 1];
+            console.log(newPostPath)
+        }
+        else {
         const postPath = req.file.path.split('\\');
         const newPostPath = "/" + postPath[postPath.length - 2] + "/" + postPath[postPath.length - 1];
         console.log(newPostPath)
+        }
 
         Post.create({
             title: req.body.title,
