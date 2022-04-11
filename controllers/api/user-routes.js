@@ -94,25 +94,54 @@ router.post('/', (req, res) => {
 // PUT update username or email 
 router.put('/:id', withAuth, upload.single('image'), (req, res) => {
     console.log(req.file)
-    
-
-
-    const imgPath = req.file.path.split('\\');
-    const newImgPath = "/" + imgPath[imgPath.length - 2] + "/" + imgPath[imgPath.length - 1];
-    console.log('++++++++++++++++++++++==========================', req.file.path);
-    console.log(newImgPath);
-    User.update(
-        {
-            username: req.body.username,
-            email:req.body.email,
-            user_image_path: newImgPath,
-        },
-        {
-            individualHooks: true,
-            where: {
-                id: req.params.id
+    if(process.env.JAWSDB_URL){
+        const imgPath = req.file.path.split('/');
+        const newImgPath = "/images/" + imgPath[imgPath.length - 1];
+        console.log('++++++++++++++++++++++==========================', req.file.path);
+        console.log("This is user image path", newImgPath);
+        User.update(
+            {
+                username: req.body.username,
+                email:req.body.email,
+                user_image_path: newImgPath,
+            },
+            {
+                individualHooks: true,
+                where: {
+                    id: req.params.id
+                }
             }
-        }
+        )
+            .then(userData => {
+                if (!userData) {
+                    res.status(404).json({ message: 'No user found with this id' });
+                    return;
+                }
+                // NOTE why does the user data have an array of length 2
+                res.json(userData)
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+    }
+    else  {
+        const imgPath = req.file.path.split('\\');
+        const newImgPath = "/" + imgPath[imgPath.length - 2] + "/" + imgPath[imgPath.length - 1];
+        console.log('++++++++++++++++++++++==========================', req.file.path);
+        console.log(newImgPath);
+        User.update(
+            {
+                username: req.body.username,
+                email:req.body.email,
+                user_image_path: newImgPath,
+            },
+            {
+                individualHooks: true,
+                where: {
+                    id: req.params.id
+                }
+            }
     )
         .then(userData => {
             if (!userData) {
@@ -126,6 +155,10 @@ router.put('/:id', withAuth, upload.single('image'), (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+
+    }
+
+
 });
 
 // DELETE user from database 

@@ -5,22 +5,26 @@ const userData = [
 {
     username:'Samm',
     email:'samm@email.com',
-    password:'password1!'
+    password:'password1!',
+    user_image_path: '/images/meetsam.jpg'
 },
 {
     username:'Michael',
     email:'michael@email.com',
-    password:'password2!'
+    password:'password2!',
+    user_image_path: '/images/meetmichael.png'
 },
 {
     username:'Ulises',
     email:'ulises@email.com',
-    password:'password3!'
+    password:'password3!',
+    user_image_path: '/images/meetulises.jpg'
 },
 {
     username:'Jim',
     email:'jim@email.com',
-    password:'password4!'
+    password:'password4!',
+    user_image_path: '/images/meetjim.jpg'
 }
 ];
 

@@ -41,10 +41,11 @@ profileImage.addEventListener('click', async function (event) {
     const imageFile = document.getElementById('profile-image-id').files;
 
     if (!imageFile) {
+      document.location.replace('/')
       return;
     }
 
-    console.log("this is the imageFile",imageFile[0]);
+    console.log("this is the imageFile", imageFile[0]);
 
     const formData = new FormData();
 
@@ -65,6 +66,8 @@ profileImage.addEventListener('click', async function (event) {
     console.log(data[1][0].user_image_path);
     
     if (data.ok) {
-      document.location.replace("/");
+      document.querySelector('#update-pic-modal').classList.remove('modal')
+      window.location.reload();
+
     }
 });
