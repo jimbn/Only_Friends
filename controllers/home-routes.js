@@ -1,7 +1,7 @@
 // importing needed packages and models to run file
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Channel, Comment } = require('../models');
+const { Post, User, Comment } = require('../models');
 
 
 // route to render the homepage view .this is view for all visitors to site loggedIn or NOT
