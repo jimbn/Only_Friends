@@ -195,6 +195,9 @@ ul {
     box-shadow: 0 0 4px var(--accent-color), 0 0 3px white;
 }
 
+.list-title:hover {
+    text-shadow: 0 0 2px black, 0 0 3px white;;
+}
 
 .cat-img img, .featured-user {
     display: flex;
@@ -255,6 +258,7 @@ textarea {
     display:flex;
     padding: 5px;
 }
+
 /* samm added margin bottom so cards arent flush up on eachother, and a border on each card  */
 .card {
     margin-bottom: 15px;
