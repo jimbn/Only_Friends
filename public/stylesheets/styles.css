@@ -1,26 +1,10 @@
 :root {
-    /* Odd but trendy */
     --background-color: rgb(125, 180, 181);
     --text-color: rgb(0, 0, 0);
     --container-color: rgb(224, 239, 241);
     --accent-color: rgb(104, 1, 72);
-
-    /* Friend */
-    /*  rgb(210,72,88) rgb(234,176,94) */
-    /* --background-color: rgb(234,134,118); 
-    --text-color: black;
-    --container-color: rgb(253,238,205);
-    --accent-color:rgb(75,56,49); */
-
-    /* Adrift in dreams */
-    /*  */
-    /* samm like background */
-    /* --background-color: rgb(168,219,168); 
-    --text-color: black;
-    --container-color: rgb(121,189,154);
-    --accent-color:rgb(11,72,107); */
-
 }
+
 html {
     height: auto;
     box-sizing: border-box;
@@ -251,6 +235,14 @@ textarea {
     overflow: hidden;
 }
 
+.hide-display {
+    display: none;
+}
+
+.show-display {
+    display: block;
+}
+
 .list-post {
     display: flex;
     padding: 5px 0;
@@ -264,6 +256,10 @@ textarea {
 .list-btn, .list-title{
     display:flex;
     padding: 5px;
+}
+
+.list-title {
+    font-weight: lighter;
 }
 
 /* samm added margin bottom so cards arent flush up on eachother, and a border on each card  */
