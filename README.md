@@ -34,6 +34,7 @@
   📽
   
   here will be a demo video of our application
+  [Check out our deployed app live here](https://only-friendz.herokuapp.com/).
 
   ## Installation
   💻
