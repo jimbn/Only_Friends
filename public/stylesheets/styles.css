@@ -195,6 +195,10 @@ ul {
     box-shadow: 0 0 4px var(--accent-color), 0 0 3px white;
 }
 
+.padding-left {
+    padding-left: 3px;
+}
+
 .list-title:hover {
     text-shadow: 0 0 2px black, 0 0 3px white;;
 }
