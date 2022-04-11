@@ -157,7 +157,8 @@ router.post('/',  withAuth, upload.single("image"),  (req, res) => {
     if (req.file) {
         const postPath = req.file.path.split('\\');
         const newPostPath = "/" + postPath[postPath.length - 2] + "/" + postPath[postPath.length - 1];
-        console.log(newPostPath)
+        console.log("=============================================================", postPath);
+        console.log("=============================================================", newPostPath);
 
         Post.create({
             title: req.body.title,
