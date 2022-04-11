@@ -128,6 +128,9 @@ a:hover {
     border-radius: 5px;
     font-weight: lighter;
     margin: 3px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
 
 
 }
@@ -327,6 +330,7 @@ footer a:hover {
 .teamcard {
     max-width: 100%;
     max-height: fit-content;
+    background-color: var(--background-color);
 }
 
 .catcontainer {
