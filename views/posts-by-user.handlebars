@@ -1,4 +1,10 @@
-<h1>See What Our Friend {{user.username}} Has Posted ...</h1>
+
+<div class="row d-flex justify-content-center">
+  <div class="card col-4">
+    <img class="img-thumbnail" src="{{user.user_image_path}}" alt="">
+  </div>
+  <h1 class="text-center">See What Our Friend {{user.username}} Has Posted ...</h1>
+</div>
 
  {{#each posts as |post|}}
       {{> postsbyuser post }}

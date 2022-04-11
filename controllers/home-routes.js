@@ -33,7 +33,8 @@ router.get('/',(req, res) => {
             },
             attributes:['id','title','user_id'],
             include: {
-                model: User
+                model: User,
+                attributes: ['user_image_path']
             }
         })
         
@@ -53,7 +54,7 @@ router.get('/',(req, res) => {
                 users,
                 loggedIn: req.session.loggedIn,
                 loggedID: req.session.user_id,
-                loggedUsername: req.session.username
+                loggedUsername: req.session.username,
             });
         }
     })

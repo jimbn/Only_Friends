@@ -178,7 +178,6 @@ router.post('/',  withAuth, upload.single("image"),  (req, res) => {
                 console.log(err);
                 res.status(500).json(err);
             })
-    
         }
         else {
             const postPath = req.file.path.split('\\');
