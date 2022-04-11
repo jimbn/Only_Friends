@@ -158,32 +158,54 @@ router.post('/',  withAuth, upload.single("image"),  (req, res) => {
             const postPath = req.file.path.split('/');
             const newPostPath = "/image/" + postPath[postPath.length - 1];
             console.log(newPostPath)
+        
+            Post.create({
+                title: req.body.title,
+                post_body: req.body.post_body,
+                category_name: req.body.category_name,
+                user_id: req.session.user_id,
+                image_path: newPostPath
+            })
+            .then(postData => {
+                if(postData){
+                    res.redirect(`/post/${postData.dataValues.id}`)
+                }
+                else {
+                    window.location.reload();
+                }
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            })
+    
         }
         else {
-        const postPath = req.file.path.split('\\');
-        const newPostPath = "/" + postPath[postPath.length - 2] + "/" + postPath[postPath.length - 1];
-        console.log(newPostPath)
+            const postPath = req.file.path.split('\\');
+            const newPostPath = "/" + postPath[postPath.length - 2] + "/" + postPath[postPath.length - 1];
+            console.log(newPostPath)
+            
+            Post.create({
+                title: req.body.title,
+                post_body: req.body.post_body,
+                category_name: req.body.category_name,
+                user_id: req.session.user_id,
+                image_path: newPostPath
+            })
+            .then(postData => {
+                if(postData){
+                    res.redirect(`/post/${postData.dataValues.id}`)
+                }
+                else {
+                    window.location.reload();
+                }
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            })
         }
 
-        Post.create({
-            title: req.body.title,
-            post_body: req.body.post_body,
-            category_name: req.body.category_name,
-            user_id: req.session.user_id,
-            image_path: newPostPath
-        })
-        .then(postData => {
-            if(postData){
-                res.redirect(`/post/${postData.dataValues.id}`)
-            }
-            else {
-                window.location.reload();
-            }
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        })
     }  
     else {
         Post.create({
