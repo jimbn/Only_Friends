@@ -94,6 +94,9 @@ router.post('/', (req, res) => {
 // PUT update username or email 
 router.put('/:id', withAuth, upload.single('image'), (req, res) => {
     console.log(req.file)
+    
+
+
     const imgPath = req.file.path.split('\\');
     const newImgPath = "/" + imgPath[imgPath.length - 2] + "/" + imgPath[imgPath.length - 1];
     console.log('++++++++++++++++++++++==========================', req.file.path);
