@@ -1,0 +1,35 @@
+
+.modalHide {
+    display: none;
+}
+    
+.modal {
+    display: flex; /*default hide modal*/
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index:990;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    margin: 0px;
+}
+
+.loginErrorForm , .login-form, .signup-form, .new-post-form, .new-post-form {
+    border: 2px solid var(--accent-color);
+    background-color: var(--background-color);
+    padding: 20px;
+}
+
+.f-space {
+    padding-bottom: 5px;
+}
+
+.submit-btn {
+    margin: 10px 0 0 0;
+    
+}
+
+.submit-btn button {
+    padding: 0 57px;
+}

@@ -1,0 +1,26 @@
+  <header class="position-sticky">
+    <h1 class="header-title"> Only_Friends</h1>
+    <div class="dash header-flex">
+          <div class="header-left padding-left">
+            <input id="search-bar" class="input-css" type="text" placeholder="Friend's Username"/>
+            <button id="user-search-bar" class="userBtn">Search</button>
+          </div>
+        
+          <div class="header-right">
+            <div class="userBtn"><a href="/">Home</a> </div>
+            {{#if loggedIn}}
+            <button class=" userBtn" id="update-pic">Update profile image</button>
+            <button class=" userBtn" id="logout">Logout</button>
+            
+            {{> update-profile-picture}}
+          {{else}}
+            <button class=" userBtn" id="open-login-modal">Log In</button>
+            <button class=" userBtn" id="open-signup-modal">Sign Up</button>
+            {{!-- Modals for login/signup --}}
+            {{> login-modal}}
+            {{> error-message}}
+          {{/if}}
+          {{> signup-modal}}
+          </div>
+    </div>
+  </header>
