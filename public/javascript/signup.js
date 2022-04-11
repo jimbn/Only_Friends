@@ -1,5 +1,3 @@
-// TODO: add modal for error handling
-
 
 // sign up form handler function 
 async function signupFormHandler(event) {

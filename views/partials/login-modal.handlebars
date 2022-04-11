@@ -1,15 +1,22 @@
 <div id="loginModal" class="modalHide">
-    <form class="login-form">
-        <div>
-            <label for="email-login">email:</label>
-            <input type="text" id="email-login" />
+    <div class="login-form">
+        <form>
+            <div>
+                <label for="email-login">E-MAIL:</label>
+                <br>
+                <input class="input-css" type="text" id="email-login" />
+            </div>
+            <div>
+                <label for="password-login">PASSWORD:</label>
+                <br>
+                <input class="input-css" type="password" id="password-login" />
+            </div>
+            <div class="submit-btn">
+                <button class="userBtn" id="login-btn" type="submit">Log In</button>
+            </div>
+        </form>
+        <div class="submit-btn">
+            <button class="userBtn" id="close-login-btn" type="click">Cancel</button>
         </div>
-        <div>
-            <label for="password-login">password:</label>
-            <input type="password" id="password-login" />
-        </div>
-        <div>
-            <button class="userBtn" id="login-btn" type="submit">login</button>
-        </div>
-    </form>
+    </div>
 </div>

@@ -3,6 +3,7 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 
+// 1-to-1 relations 
 
 Post.belongsTo(User, {
     foreignKey: 'user_id',
@@ -34,11 +35,6 @@ Post.hasMany(Comment, {
     foreignKey: 'post_id',
     constraints:false
 });
-
-// Channel.hasMany(Post, {
-//     foreignKey: 'channel_id',
-//     constraints:false
-// }); 
 
 module.exports = {
     User, 
