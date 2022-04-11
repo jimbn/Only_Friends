@@ -3,7 +3,6 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 
-
 // 1-to-1 relations 
 
 Post.belongsTo(User, {
@@ -20,7 +19,6 @@ Comment.belongsTo(Post, {
     foreignKey: 'post_id',
     constraints:false
 });
-
 
 // 1-to-Many relations 
 User.hasMany(Comment, {
