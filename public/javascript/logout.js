@@ -1,4 +1,4 @@
-
+// TODO: add modal for error handling
 
 async function logoutUser() {
     console.log('logout button is clicked')
