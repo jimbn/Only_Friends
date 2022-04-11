@@ -49,7 +49,7 @@
   5. Use only_friends_db;
   6. Run command 'npm run seed' in terminal.
   7. Run node server.js or nodemon server.js 
-  8. Open web browser and enter our heroku live url in the url bar.
+  8. Or, open web browser and enter our heroku live url in the url bar.
 
   ## Usage 
   🔎
