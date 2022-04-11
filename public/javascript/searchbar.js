@@ -6,7 +6,7 @@ async function getAllUsers(event) {
     console.log('Search bar pressed')
     // this graves the text from the text box
     const userName = searchBarEl.value;
-   
+//   reloads page at this user
     document.location.replace(`/post/user/page/${userName}`);
     
 };
