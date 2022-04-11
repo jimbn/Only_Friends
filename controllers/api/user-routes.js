@@ -98,7 +98,7 @@ router.put('/:id', withAuth, upload.single('image'), (req, res) => {
         const imgPath = req.file.path.split('/');
         const newImgPath = "/images/" + imgPath[imgPath.length - 1];
         console.log('++++++++++++++++++++++==========================', req.file.path);
-        console.log(newImgPath);
+        console.log("This is user image path", newImgPath);
         User.update(
             {
                 username: req.body.username,
@@ -126,22 +126,22 @@ router.put('/:id', withAuth, upload.single('image'), (req, res) => {
             });
     }
     else  {
-    const imgPath = req.file.path.split('\\');
-    const newImgPath = "/" + imgPath[imgPath.length - 2] + "/" + imgPath[imgPath.length - 1];
-    console.log('++++++++++++++++++++++==========================', req.file.path);
-    console.log(newImgPath);
-    User.update(
-        {
-            username: req.body.username,
-            email:req.body.email,
-            user_image_path: newImgPath,
-        },
-        {
-            individualHooks: true,
-            where: {
-                id: req.params.id
+        const imgPath = req.file.path.split('\\');
+        const newImgPath = "/" + imgPath[imgPath.length - 2] + "/" + imgPath[imgPath.length - 1];
+        console.log('++++++++++++++++++++++==========================', req.file.path);
+        console.log(newImgPath);
+        User.update(
+            {
+                username: req.body.username,
+                email:req.body.email,
+                user_image_path: newImgPath,
+            },
+            {
+                individualHooks: true,
+                where: {
+                    id: req.params.id
+                }
             }
-        }
     )
         .then(userData => {
             if (!userData) {
