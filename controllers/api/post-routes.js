@@ -205,7 +205,6 @@ router.post('/',  withAuth, upload.single("image"),  (req, res) => {
                 res.status(500).json(err);
             })
         }
-
     }  
     else {
         Post.create({

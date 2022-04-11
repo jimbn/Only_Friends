@@ -1,37 +1,53 @@
+{{!-- 
+<img src="{{user.user_image_path}}" alt="'s post image">
 
-<h1>{{user_image_path}}</h1>
-{{!-- Section for listing channels --}}
-<section class="channel container">
-    <h2>Friends</h2>
-    {{#if loggedIn}}
-        {{#each users as |user|}}
-        {{> featured-user user}}
-        {{/each}}
-    {{else}}
-        {{#each users as |user|}}
-        {{> featured-user}}
-        {{/each}}
-    {{/if}}
-
-       
+        --}}
 </section>
 {{!-- renders users post> --}}
 {{#if loggedIn}}
-<section>
+
+<section class="post-list container">
+    <h1 class="underline ">Welcome, {{loggedUsername}}! </h1>
+    <br>
     <div>
-        <ol>
+        <h2>What you have been up too...</h2>
+        <button class="float-right userBtn" id="new-post">Create Post</button>
+    </div>
+    
+    <div>
+        <ul class="card-container r-padding"> 
             {{#each posts as |post|}}
             {{> users-display-post post}}
             {{/each}}
-        </ol>
+        </ul>
     </div>
 </section>
+
+<section class="container">
+    
+</section>
+
+{{> new-post}}
+<div id="delete-post" class="hide"></div>
+<script src="/javascript/new-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+{{else}}
+<section class="featured-friend container">
+    <h1>Welcome, Friend!</h1>
+    <h2>Friends you may be interested in...</h2>
+    <section class="featured-friends row g-3">
+        {{#each users as |user|}}
+        {{> featured-user}}
+        {{/each}}
+    </section>
+</section>
+
 {{/if}}
 
 {{!-- Section for categories --}}
 {{> categories-list}}
 {{!-- make delete functionality go here as well --}}
-<div id="delete-button" class="hide"></div>
+
 
 <script src="/javascript/carousel.js"></script>
  <script src="/javascript/delete-post.js"></script>

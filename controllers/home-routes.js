@@ -26,32 +26,36 @@ router.get('/',(req, res) => {
     })
     .then(userData => {
         const users = userData.map(user => user.get({ plain: true }));
+        if(req.session.loggedIn) {
         Post.findAll({
-            // where: {
-            //     user_id: req.session.user_id
-            // },
+            where: {
+                user_id: req.session.user_id
+            },
             attributes:['id','title','user_id'],
             include: {
                 model: User
             }
         })
         
-        // this was addad to get posts in to users-display-post.handlebars
-        .then(postData => {
-            if (!postData) {
-                res.status(404).json({ message: 'this friend hasnt posted anything yet!' });
-                return;
-            }
-            const posts = postData.map(post => post.get({ plain: true }));
+            // this was addad to get posts in to users-display-post.handlebars
+            .then(postData => {
+                const posts = postData.map(post => post.get({ plain: true }));
+                res.render('homepage',{
+                    users,
+                    posts,
+                    loggedIn: req.session.loggedIn,
+                    loggedID: req.session.user_id,
+                    loggedUsername: req.session.username
+                });
+            })
+        } else {
             res.render('homepage',{
-                // users,
-                posts,
+                users,
                 loggedIn: req.session.loggedIn,
                 loggedID: req.session.user_id,
                 loggedUsername: req.session.username
             });
-
-        })
+        }
     })
 });
 
@@ -208,10 +212,11 @@ router.get('/post/user/page/:username', (req, res) => {
                 where: {
                     user_id: user.id
                 },
-                includes: [{
-                    model: User,
-
-                }]
+                includes: [
+                    {
+                    model:Comment,
+                    }
+                ]
             })
                 .then(postData => {
                     if (!postData) {
