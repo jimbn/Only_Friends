@@ -28,7 +28,7 @@
   ## Description
   ℹ
 
-  Only_Friends is an application built to allow users to post about their interests, comment on other posts and find other friends online who have similar interests! Users can also learn more about a topic they're intrigued about, by browsing the different categories Friends post about on the website.
+  Only_Friends is an application built using Node.js, Handlebars as the templating engine ,Sequelize as the ORM, and Multer technology to allow users to post about       their interests, comment on other posts and find other friends online who have similar interests! Users can also learn more about a topic they're intrigued about, by   browsing the different categories Friends post about on the website.
   
   ## Demo
   📽
@@ -54,6 +54,9 @@
   ## Usage 
   🔎
   Instructions for use:
+  Users can join the site by clicking the sign up button and entering the prompted information.
+  Once logged in, users can browse various friends and categories of posts . They can also create their own posts, upload images onto the posts and comment on other     peoples posts as well. Users can also upload a profile picture as well .
+  Users can do this by clicking on the user friendly buttons and following the prompts.
 
   to be edited upon finish
 
