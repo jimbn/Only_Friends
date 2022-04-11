@@ -26,14 +26,29 @@ async function loginHandler(event) {
             // can have a redirect to a page with a different buton instead of log insincwe user will already be logged in
             console.log('logged in');
             document.location.reload();
-        } else {
+        } else if(response.status >= 200){
+
             console.log(response.statusText + ' ' + response.status);
-        }
+            console.log('condition was triggered')
+            // remove the display none from modal
+        document.querySelector('#loginError').classList.add('modal');
+        //overflow disables scrolling
+        document.querySelector('body').style.overflow = "hidden";
+         }
         
     }
 
-}
+};
+
+//  remove model calss to make error model invisable
+ function exitButtonHandler(event){
+     console.log('function was triggered');
+     document.querySelector('#loginError').classList.remove('modal');
+     document.querySelector('body').style.overflow = "visible";
+ }
 
 
 // listening for log in button click
 document.querySelector('#login-btn').addEventListener('click', loginHandler);
+// listening for error form button
+document.querySelector('#errorFormBtn').addEventListener('click', exitButtonHandler);

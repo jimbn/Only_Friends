@@ -126,7 +126,10 @@ a:hover {
     border-radius: 5px;
     font-weight: lighter;
 
-
+}
+.exitBtn {
+    text-align: center;
+    margin: 0 40%;
 }
 
 

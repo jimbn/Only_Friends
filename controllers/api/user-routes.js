@@ -163,10 +163,12 @@ router.post('/login', (req, res) => {
         const checkPass = userData.validatePassword(req.body.password);
         console.log(checkPass);
         if (!checkPass) {
+           
             res.status(400).json({ message: 'Incorrect password!' });
             return;
         }
-
+    
+        console.log(req.body);
         req.session.save(() => {
             req.session.user_id = userData.id,
             req.session.username = userData.username;
@@ -174,8 +176,9 @@ router.post('/login', (req, res) => {
 
             res.json({ user: userData, message: `You are now logged in as ${userData.username}` })
             console.log(req.session)
+          
         });
-        
+       
     });
 });
 
