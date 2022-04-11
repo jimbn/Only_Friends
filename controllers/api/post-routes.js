@@ -156,7 +156,7 @@ router.post('/',  withAuth, upload.single("image"),  (req, res) => {
     if (req.file) {   
         if(process.env.JAWSDB_URL) {
             const postPath = req.file.path.split('/');
-            const newPostPath = "/image/" + postPath[postPath.length - 1];
+            const newPostPath = "/images/" + postPath[postPath.length - 1];
             console.log(newPostPath)
         
             Post.create({
