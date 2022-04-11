@@ -32,8 +32,10 @@
   
   ## Demo
   📽
-  
-  here will be a demo video of our application
+ Below is a demo of our app in mobile view
+ 
+ ![Only_Friends (3)](https://user-images.githubusercontent.com/92121595/162805933-f7fe8bae-392b-4468-9d91-c7ab0df39af8.gif)
+ 
   [Check out our deployed app live here](https://only-friendz.herokuapp.com/).
 
   ## Installation
