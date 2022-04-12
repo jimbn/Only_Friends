@@ -1,7 +1,11 @@
 
 <div class="row d-flex justify-content-center">
   <div class="card col-4">
-    <img class="img-thumbnail" src="{{user.user_image_path}}" alt="">
+  {{#if user.user_image_path}}
+    <img class="img-thumbnail" src="{{user.user_image_path}}" alt="{{user.username}}'s Picture">
+  {{else}}
+    <img class="img-thumbnail" src="/db_images/Default_img.png" alt="{{user.username}} Picture">
+  {{/if}}
   </div>
   <h1 class="text-center">See What Our Friend {{user.username}} Has Posted ...</h1>
 </div>

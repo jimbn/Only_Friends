@@ -1,37 +1,18 @@
 :root {
-    /* Odd but trendy */
     --background-color: rgb(125, 180, 181);
     --text-color: rgb(0, 0, 0);
     --container-color: rgb(224, 239, 241);
     --accent-color: rgb(104, 1, 72);
-
-    /* Friend */
-    /*  rgb(210,72,88) rgb(234,176,94) */
-    /* --background-color: rgb(234,134,118); 
-    --text-color: black;
-    --container-color: rgb(253,238,205);
-    --accent-color:rgb(75,56,49); */
-
-    /* Adrift in dreams */
-    /*  */
-    /* samm like background */
-    /* --background-color: rgb(168,219,168); 
-    --text-color: black;
-    --container-color: rgb(121,189,154);
-    --accent-color:rgb(11,72,107); */
-
 }
 html {
     height: auto;
     box-sizing: border-box;
 }
-
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: var(--text-color);
     box-sizing: inherit;
 }
-
 body {
     margin: 0;
     padding: 0;
@@ -40,8 +21,25 @@ body {
     flex-direction: column;
     height: 100%;
 }
+a {
+    text-decoration: none;
+    color: black;
+}
+ul {
+    list-style-type: none;
+}
+textarea {
+    resize: none;
+    display: block;
+    overflow: hidden;
+}
+h2 {
+    padding: 5px;
+    border-bottom: 2px solid var(--accent-color);
+    text-shadow: 0 0 8px white;
+}
 
-
+/* Header CSS Begins */
 header {
     background-image: linear-gradient(var(--container-color), var(--background-color));
     border-bottom: 8px double var(--accent-color);
@@ -50,133 +48,30 @@ header {
     top: 0;
     width: 100;
 }
-.hide {
-    display: none;
-}
 .header-title, .ui-name {
     text-align: center;
     color: var(--background-color);
     text-shadow: 1px 1px 2px black, 0 0 8px white, 0 0 5px black;
 
 }
-
-
-
 .dash {
     padding-bottom: 5px;
 }
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-    border: 2px solid var(--accent-color);
-    border-radius: 5px;
-    margin: 10px;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    min-width: 250px;
-    border-radius: 5px;
-
-    z-index: 999;
-    border: 2px solid var(--accent-color);
-    background-color: var(--container-color);
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    color: black;
-}
-
 .header-flex{
     display:flex;
     justify-content: space-between;
 }
-
 .header-right{
     display: flex;
     justify-content: end;
 }
-
 .header-left{
     display:flex;
     justify-content:start;
 }
+/* Header CSS Ends */
 
-.input-css {
-    background-color: var(--container-color);
-}
-.userBtn {
-    text-decoration: none;
-    /* color: var(--background-color); */
-    /* text-shadow: 0px 0px 2px rgb(125, 180, 181); */
-    color: black;
-    background-color: var(--container-color);
-    border: none;
-    text-align: right;
-    border: 2px solid rgba(104, 1, 72, 0.8);
-    border-radius: 5px;
-    font-weight: lighter;
-    margin: 3px;
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-
-}
-.exitBtn {
-    text-align: center;
-    margin: 0 40%;
-}
-
-
-.featured-user, .cat-img {
-    font-weight: 900;
-}
-
-.top-padding {
-    padding: 5px;
-    position: relative;
-    min-height: 100%;
-    padding-bottom: 2.5rem;
-}
-
-h2 {
-    padding: 5px;
-    border-bottom: 2px solid var(--accent-color);
-    text-shadow: 0 0 8px white;
-}
-
-.scroll {
-    display: block;
-    padding: 5px;
-    margin: 5px;
-    height: 100px;
-    overflow: auto;
-}
-
-.scrollComment {
-    display: block;
-    padding: 10px;
-    margin: 10px;
-    height: 40rem;
-    overflow: auto;
-}
-
-
-ul {
-    list-style-type: none;
-}
-
+/* Homepage CSS Begins */
 .cat-img, .featured-user {
     width: 150px;
     height: 150px;
@@ -185,99 +80,52 @@ ul {
     background-color: var(--background-color);
     text-shadow: 2px 2px 2px var(--container-color);
     font-size: larger;
-
+    font-weight:900;
 }
-
-.cat-img:hover, .hover:hover, .featured-user:hover {
-    /* width:200px;
-    height:200px; */
-    box-shadow: 0 0 25px rgb(36, 123, 124), 0 0 15px var(--container-color), 0 0 10px white;
-}
-
-.userBtn:hover {
-    box-shadow: 0 0 4px var(--accent-color), 0 0 3px white;
-}
-
-.padding-left {
-    padding-left: 3px;
-}
-
-.list-title:hover {
-    text-shadow: 0 0 2px black, 0 0 3px white;;
-}
-
 .cat-img img, .featured-user {
     display: flex;
     justify-content: center;
     width: 100px;
     height: 100px
 }
-
-.carousel-item img {
-    max-width: fit-content;
-    height: 500px;
-    border: none;
+.catcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
-
-.commentDisplay {
-    border: 2px solid lightblue;
+.post-img{
+    max-width:100%;
+    height:auto;
 }
-
-.floatRight {
-    text-align: right;
-}
-
-.listPadding {
-    padding: 3px;
-}
-
-.commentPadding {
-    padding: 10px;
-}
-
-.article-container {
-    border: 2px solid var(--accent-color);
-    border-radius: 5px;
-    margin: 2px;
-}
-
-.underline{
-    text-decoration: underline;
-}
-
-textarea {
-    resize: none;
-    display: block;
-    overflow: hidden;
-}
-
 .list-post {
     display: flex;
     padding: 5px 0;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
-
-.r-padding {
-    padding-right: 32px;
-}
-
 .list-btn, .list-title{
     display:flex;
     padding: 5px;
 }
+.list-title {
+    font-weight: lighter;
+}
+/* Homepage CSS Ends */
 
-/* samm added margin bottom so cards arent flush up on eachother, and a border on each card  */
+
+/* Card CSS Begins  */
+.article-container {
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    margin: 2px;
+}
 .card {
     margin-bottom: 15px;
     border: 2px solid grey;
 }
-
-/* samm added styling to card header  */
 .card-header {
     background-color: rgb(125, 180, 181);
     color: whitesmoke;
 }
-
 .card-container {
     background-color: var(--container-color--);
     color: black;
@@ -285,23 +133,58 @@ textarea {
     margin-top: 15px;
     border-radius: 3px;
 }
+/* Card CSS Ends */
 
+/* Comment Display CSS Begins */
 .comment {
     border-bottom: 1px solid rgba(0, 0, 0, .1);
     padding: 10px;
     font-size: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-
 }
-
+.comment-border {
+    text-decoration:underline;
+}
+.commentDisplay {
+    border: 2px solid lightblue;
+}
 .commentline {
     font-size: 14px;
     font-weight: lighter;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+}
+.commentPadding {
+    padding: 10px;
 }
 
+/* Comment Display CSS Ends */
+
+/* Teampage CSS Begins */
+.container6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+
+}
+.teamcard {
+    max-width: 100%;
+    max-height: fit-content;
+    background-color: var(--background-color);
+}
+.image-profile{ 
+    width: 80px;
+    height: 60%;
+}
+.github {
+    max-width:50px;
+    max-height:50px;
+}
+/* Teampage CSS ends */
+
+
+/* Footer CSS Begins */
 footer {
     /* background-color: rgb(125, 180, 181); */
     background-image: linear-gradient(var(--container-color), var(--background-color));
@@ -318,60 +201,104 @@ footer {
     position: fixed;
     text-shadow: 0 0 8px black;
 }
-
-
 footer a {
     color: white;
 
 }
-
 footer a:hover {
     color: rgb(104, 1, 72);
 }
+/* Footer CSS Ends */
 
-/* styling for teampage */
-.container6 {
-    display: flex;
-    flex-direction: column;
+/* Utility CSS Begins*/
+
+.floatRight {
+    text-align: right;
+}
+.hide {
+    display: none;
+}
+.hide-display {
+    display: none;
+}
+.input-css {
+    background-color: var(--container-color);
+}
+.listPadding {
+    padding: 3px;
+}
+.padding-left {
+    padding-left: 3px;
+}
+.r-padding {
+    padding-right: 32px;
+}
+.scroll {
+    display: block;
+    padding: 5px;
+    margin: 5px;
+    height: 100px;
+    overflow: auto;
+}
+.scrollComment {
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    height: 40rem;
+    overflow: auto;
+}
+.show-display {
+    display: block;
+}
+.top-padding {
+    padding: 5px;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 2.5rem;
+}
+.underline{
+    text-decoration: underline;
+}
+.userBtn {
+    text-decoration: none;
+    color: black;
+    background-color: var(--container-color);
+    border: none;
+    text-align: right;
+    border: 2px solid rgba(104, 1, 72, 0.8);
+    border-radius: 5px;
+    font-weight: lighter;
+    margin: 3px;
+    display:flex;
+    flex-direction:column;
     align-items: center;
-    margin-top: 25px;
-
 }
-
-.teamcard {
-    max-width: 100%;
-    max-height: fit-content;
-    background-color: var(--background-color);
+.exitBtn {
+    text-align: center;
+    margin: 0 40%;
 }
-
-.image-profile{ 
-    width: 80px;
-    height: 60%;
+a:hover {
+    color: black;
 }
-
-.catcontainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+.cat-img:hover, .hover:hover, .featured-user:hover {
+    box-shadow: 0 0 25px rgb(36, 123, 124), 0 0 15px var(--container-color), 0 0 10px white;
 }
-
-.comment-border {
-    text-decoration:underline;
+.list-title:hover {
+    text-shadow: 0 0 2px black, 0 0 3px white;;
 }
-
-.github {
-    max-width:50px;
-    max-height:50px;
+.userBtn:hover {
+    box-shadow: 0 0 4px var(--accent-color), 0 0 3px white;
 }
+/* Utility CSS Ends */
 
-.post-img{
-    max-width:100%;
-    height:auto;
-}
 
-@media (max-width:980px) {
- 
-}
+
+
+
+
+
+
+/* Mobile responsive CSS */
 @media (max-width:768px) {
     *{
         font-size: 14px;
@@ -385,8 +312,6 @@ footer a:hover {
         height: 75px;
     }
 }
-
-
 @media (max-width:480px) {
     *{
         font-size: 10px;
