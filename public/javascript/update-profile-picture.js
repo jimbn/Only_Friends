@@ -68,6 +68,5 @@ profileImage.addEventListener('click', async function (event) {
     if (data.ok) {
       document.querySelector('#update-pic-modal').classList.remove('modal')
       window.location.reload();
-
     }
 });

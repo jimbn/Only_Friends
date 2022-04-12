@@ -26,7 +26,7 @@ async function loginHandler(event) {
             // can have a redirect to a page with a different buton instead of log insincwe user will already be logged in
             console.log('logged in');
             document.location.reload();
-        } else if (response.status >= 200) {
+        } else if (response.status > 200) {
 
             console.log(response.statusText + ' ' + response.status);
             console.log('condition was triggered')
