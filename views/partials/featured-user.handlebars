@@ -3,6 +3,8 @@
     <a href="/post/user/page/{{username}}"> {{username}}
     {{#if user_image_path}} 
         <img class= "image-profile" src="{{user_image_path}}" alt="">
+        {{else}}
+    <img class="image-profile" src="/db_images/Default_img.png" alt="{{user.username}} Picture">
     {{/if}}
     </a> 
 </div>

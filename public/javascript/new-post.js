@@ -33,7 +33,7 @@ async function newFormHandler(event) {
     // console.log(imageUrl);
 
   //does not allow for a fetch request if any are left empty 
-  // if(!title & !post_body) {
+  // if(title & post_body) {
     const response = await fetch("/api/posts/",  {
       method: 'post',
       body: JSON.stringify({
