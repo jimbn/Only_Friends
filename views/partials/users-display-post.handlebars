@@ -1,6 +1,8 @@
-<h1>hello world</h1>
-<li>{{title}}</li>
-{{!-- delete button with post delete functionality --}}
-<div id="card-text" class="card-body" data-id="{{id}}">
-    <button id="delete-button">Delete</button>
+<li class="list-post">
+    {{!-- delete button with post delete functionality --}}
+<div id="post-title" class="list-btn" data-id="{{id}}">
+    <button class="userBtn" id="delete-post">Delete</button>
 </div>
+    <h3 class="list-title"><a href="/post/{{id}}">{{title}}</a></h3>
+</li>
+

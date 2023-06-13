@@ -1,3 +1,4 @@
+
 .modalHide {
     display: none;
 }
@@ -14,7 +15,7 @@
     margin: 0px;
 }
 
-.login-form, .signup-form, .new-post-form, .new-post-form {
+.signupErrorForm, .loginErrorForm , .login-form, .signup-form, .new-post-form, .new-post-form {
     border: 2px solid var(--accent-color);
     background-color: var(--background-color);
     padding: 20px;

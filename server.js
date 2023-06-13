@@ -5,7 +5,6 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 
 
-
 const app = express();
 const port = process.env.PORT || 3001;
 
@@ -27,14 +26,17 @@ app.use(session(sess));
 
 const hbs = exphbs.create({helpers});
 
-// engine must be set up after app intialization above 
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // pass in /public to make the image accessible in URL
 app.use( /*'public',*/ express.static(path.join(__dirname, 'public')));
+
+// engine must be set up after app intialization above 
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
 
 // initiate routes 
 app.use(routes);

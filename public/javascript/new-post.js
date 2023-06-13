@@ -32,6 +32,8 @@ async function newFormHandler(event) {
     // let image_path = `\\public\\images\\` + imageUrl[imageUrl.length -1];
     // console.log(imageUrl);
 
+  //does not allow for a fetch request if any are left empty 
+  // if(!title & !post_body) {
     const response = await fetch("/api/posts/",  {
       method: 'post',
       body: JSON.stringify({
@@ -44,8 +46,9 @@ async function newFormHandler(event) {
         'Content-Type': 'application/json'
       }
     });
-
     console.log(response)
+  // }
+    
 
     if (response.ok) {
       document.location.reload();
