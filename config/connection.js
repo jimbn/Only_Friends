@@ -7,7 +7,7 @@ const sequelize = process.env.JAWSDB_URL
   : new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
       host: 'localhost' || '0.0.0.0',
       dialect: 'mysql',
-      port: `0.0.0.0`
+      port: 3306
 });
 
 module.exports = sequelize;
