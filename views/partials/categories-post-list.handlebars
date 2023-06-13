@@ -1,5 +1,4 @@
 {{#if title}}
-
     <a href="/post/{{id}}">
         <div class="card hover">
             <h5 class="card-header">{{user.username}}</h5>
@@ -10,17 +9,12 @@
                 <p class="card-text">
                     {{post_body}}
                 </p>
-                        </div>
-
-
+            </div>
 
             <div class="card-footer">
                 <small class="text-muted"> 
                     {{created_at}}
                 <div>{{comments.length}} Comment(s)</div> </small>
-                {{!-- <button id="delete-button">Delete</button> --}}
             </div>
         </div>
-    
-
 {{/if}}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
     <div class="card">
         <h5 class="card-header">{{user.username}}</h5>
@@ -18,3 +19,22 @@
         
     </div>
    
+=======
+<div class="card">
+    <h5 class="card-header">{{user.username}}</h5>
+    
+    <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">
+            {{post_body}}
+        </p>
+        {{#if image_path}}
+            <img class="post-img" src="{{image_path}}" alt="{{title}}'s post image">
+        {{/if}}
+    </div>
+
+    <div class="card-footer">
+        <small class="text-muted"> {{created_at}}
+    </div>    
+</div>
+>>>>>>> cb08d9bc92d6902bb1bf5132e0d14cde19a8369c

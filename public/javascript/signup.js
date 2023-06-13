@@ -50,7 +50,11 @@ async function signupFormHandler(event) {
       // displays modal if less than 3 characters by adding class
       errorModal.classList.add('modal')
       // changes the html text
+<<<<<<< HEAD
       errorMessageText.innerHTML = "Least 3 Characters Long!";
+=======
+      errorMessageText.innerHTML = "Password Must Be at Least 3 Characters Long!";
+>>>>>>> cb08d9bc92d6902bb1bf5132e0d14cde19a8369c
       //overflow disables scrolling
       document.querySelector('body').style.overflow = "hidden";
       console.log(response.statusText);
